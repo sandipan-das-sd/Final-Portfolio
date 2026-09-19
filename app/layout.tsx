@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sandipandas.website"),
   title: {
     default: "Sandipan Das | Full Stack Developer & SAP ABAP Developer",
     template: "%s | Sandipan Das",
@@ -25,23 +26,28 @@ export const metadata: Metadata = {
     description: "Full-stack products, scalable APIs, mobile applications and SAP ABAP solutions built by Sandipan Das.",
     siteName: "Sandipan Das Portfolio",
     locale: "en_IN",
+    url: "https://sandipandas.website",
+    images: [{ url: "/generated/sandipan-professional-portrait-v2.png", width: 1024, height: 1536, alt: "Sandipan Das — Full Stack and SAP ABAP Developer" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sandipan Das — Full Stack & SAP ABAP Developer",
     description: "Explore full-stack, mobile, real-time and SAP ABAP projects by Sandipan Das.",
+    images: ["/generated/sandipan-professional-portrait-v2.png"],
   },
-  alternates: { languages: { "en-IN": "/" } },
+  alternates: { canonical: "/", languages: { "en-IN": "/" } },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const profileSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://sandipandas.website/#person",
+    url: "https://sandipandas.website",
     name: "Sandipan Das",
     jobTitle: "Full Stack Developer",
     description: "Full Stack and SAP ABAP developer based in Kolkata, India.",
-    image: "/generated/sandipan-professional-portrait-v2.png",
+    image: "https://sandipandas.website/generated/sandipan-professional-portrait-v2.png",
     email: "mailto:dsandipan3002@gmail.com",
     telephone: "+91-8335019404",
     address: { "@type": "PostalAddress", addressLocality: "Kolkata", addressRegion: "West Bengal", addressCountry: "IN" },
