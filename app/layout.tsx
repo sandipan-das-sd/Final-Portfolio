@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Software Developer West Bengal", "Sandipan Das portfolio",
   ],
   category: "technology",
+  verification: {
+    google: "dAYpa0HUor-Auc_frAIcpNbKhrB99HCMOMGvz7FwlbM",
+  },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
     type: "profile",
