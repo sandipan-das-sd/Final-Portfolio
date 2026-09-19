@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { ProjectSlider } from "@/components/ProjectSlider";
+import { getResumeUrl, listProjects } from "@/lib/portfolio";
 import {
-  ArrowDown, ArrowUpRight, Award, Braces, BriefcaseBusiness, Check,
+  ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database,
   CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail,
   ServerCog, Smartphone, Workflow,
 } from "lucide-react";
@@ -31,7 +32,10 @@ const sapProjects = [
   ["Sales Report Generator", "Classical reports, modularization, debugging and testing in ADT."],
 ];
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const [projects, resumeUrl] = await Promise.all([listProjects(), getResumeUrl()]);
   return (
     <main>
       <Header />
@@ -79,13 +83,18 @@ export default function Home() {
 
       <section className="work section" id="work">
         <div className="section-head"><div><p className="section-label">03 / Selected work</p><h2>Built to solve<br />real problems.</h2></div><p>Products I&apos;ve helped build across healthcare, community, fintech, enterprise, communication and travel.</p></div>
-        <ProjectSlider />
+        <ProjectSlider projects={projects} />
       </section>
 
       <section className="skills section" id="skills">
         <div className="skills-copy"><p className="section-label">04 / Toolkit</p><h2>One developer,<br />across the stack.</h2><p>Comfortable moving between interface details, server architecture, data and deployment.</p></div>
         <div className="stack-list">{stack.map(([name, list], index) => <div key={name}><span>0{index + 1}</span><b>{name}</b><p>{list}</p><ArrowUpRight size={18} /></div>)}</div>
         <div className="tech-marquee"><div>{[...stack.flatMap(item => item[1].split(", ")), ...stack.flatMap(item => item[1].split(", "))].map((tech, i) => <span key={`${tech}-${i}`}>{tech} <i>✦</i></span>)}</div></div>
+      </section>
+
+      <section className="ai-practice section">
+        <div className="ai-copy"><p className="eyebrow"><i /> AI engineering</p><h2>Intelligence,<br />grounded in data.</h2><p>I build practical LLM workflows that connect models with trusted knowledge, tools and production applications.</p><div className="ai-tags">{["LangChain","LangGraph","RAG","Vector databases","LLM APIs","Embeddings","AI agents","Prompt engineering"].map(item=><span key={item}>{item}</span>)}</div></div>
+        <div className="ai-orbit" aria-label="AI engineering capabilities"><div className="ai-core"><BrainCircuit/></div><span className="ai-node node-one"><Database/><b>Vector DB</b></span><span className="ai-node node-two"><Workflow/><b>LangGraph</b></span><span className="ai-node node-three"><Bot/><b>Agents</b></span><i/><i/><i/></div>
       </section>
 
       <section className="sap section">
@@ -120,8 +129,8 @@ export default function Home() {
       </section>
 
       <section className="resume section" id="resume">
-        <div className="resume-head"><div><p className="eyebrow"><i /> My résumé</p><h2>See the complete<br />résumé right here.</h2><p>Review my education, technical skills, SAP practice, certifications, achievements and complete project experience below.</p></div><div className="resume-actions"><a href="/documents/Sandipan-Das-Resume.pdf" target="_blank" rel="noreferrer">Open full résumé <ArrowUpRight /></a><a className="resume-download-button" href="/documents/Sandipan-Das-Resume.pdf" download><Download /> Download PDF</a></div></div>
-        <div className="resume-viewer"><iframe src="/documents/Sandipan-Das-Resume.pdf#view=FitH&toolbar=1" title="Sandipan Das résumé PDF" /><div className="resume-mobile-fallback"><span>Sandipan Das</span><b>Full Stack Developer</b><p>The résumé preview opens best in your browser&apos;s PDF viewer.</p><a href="/documents/Sandipan-Das-Resume.pdf" target="_blank" rel="noreferrer">View résumé <ArrowUpRight /></a></div></div>
+        <div className="resume-head"><div><p className="eyebrow"><i /> My résumé</p><h2>See the complete<br />résumé right here.</h2><p>Review my education, technical skills, SAP practice, certifications, achievements and complete project experience below.</p></div><div className="resume-actions"><a href={resumeUrl} target="_blank" rel="noreferrer">Open full résumé <ArrowUpRight /></a><a className="resume-download-button" href={resumeUrl} download><Download /> Download PDF</a></div></div>
+        <div className="resume-viewer"><iframe src={`${resumeUrl}#view=FitH&toolbar=1`} title="Sandipan Das résumé PDF" /><div className="resume-mobile-fallback"><span>Sandipan Das</span><b>Full Stack Developer</b><p>The résumé preview opens best in your browser&apos;s PDF viewer.</p><a href={resumeUrl} target="_blank" rel="noreferrer">View résumé <ArrowUpRight /></a></div></div>
       </section>
 
       <section className="contact section">

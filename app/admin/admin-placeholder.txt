@@ -1,0 +1,1 @@
+Admin styling is defined in the global stylesheet so authentication and dashboard rendering share no extra layout dependencies.
