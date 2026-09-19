@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { MotionLayer } from "@/components/MotionLayer";
 import { getResumeUrl, listProjects } from "@/lib/portfolio";
 import {
-  ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database,
+  ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database, MessageSquare, Search, Sparkles,
   CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail,
   ServerCog, Smartphone, Workflow,
 } from "lucide-react";
@@ -97,7 +97,30 @@ export default async function Home() {
 
       <section className="ai-practice section">
         <div className="ai-copy"><p className="eyebrow"><i /> AI engineering</p><h2>Intelligence,<br />grounded in data.</h2><p>I build practical LLM workflows that connect models with trusted knowledge, tools and production applications.</p><div className="ai-tags">{["LangChain","LangGraph","RAG","Vector databases","LLM APIs","Embeddings","AI agents","Prompt engineering"].map(item=><span key={item}>{item}</span>)}</div></div>
-        <div className="ai-orbit" aria-label="AI engineering capabilities"><div className="ai-core"><BrainCircuit/></div><span className="ai-node node-one"><Database/><b>Vector DB</b></span><span className="ai-node node-two"><Workflow/><b>LangGraph</b></span><span className="ai-node node-three"><Bot/><b>Agents</b></span><i/><i/><i/></div>
+        <div className="ai-flow" aria-label="Animated retrieval augmented generation workflow">
+          <div className="flow-top"><span><i/><i/><i/></span><b>rag_pipeline.graph</b><small>Live workflow</small></div>
+          <div className="flow-canvas">
+            <svg viewBox="0 0 660 430" preserveAspectRatio="none" aria-hidden="true">
+              <path className="flow-line" d="M118 98 C185 98 180 195 255 195"/>
+              <path className="flow-line" d="M355 195 C420 195 405 92 480 92"/>
+              <path className="flow-line" d="M355 210 C430 210 415 220 480 220"/>
+              <path className="flow-line" d="M535 136 L535 176"/>
+              <path className="flow-line" d="M535 264 C535 325 430 330 355 330"/>
+              <path className="flow-line" d="M255 330 C190 330 190 350 118 350"/>
+              <circle className="flow-particle p1" r="5"><animateMotion dur="2.8s" repeatCount="indefinite" path="M118 98 C185 98 180 195 255 195"/></circle>
+              <circle className="flow-particle p2" r="5"><animateMotion dur="3.2s" repeatCount="indefinite" path="M355 195 C420 195 405 92 480 92"/></circle>
+              <circle className="flow-particle p3" r="5"><animateMotion dur="3s" repeatCount="indefinite" path="M535 264 C535 325 430 330 355 330"/></circle>
+              <circle className="flow-particle p4" r="5"><animateMotion dur="2.5s" repeatCount="indefinite" path="M255 330 C190 330 190 350 118 350"/></circle>
+            </svg>
+            <div className="flow-node query-node"><Search/><span><small>Input</small><b>User query</b></span></div>
+            <div className="flow-node agent-node"><Workflow/><span><small>Orchestrate</small><b>LangGraph agent</b></span></div>
+            <div className="flow-node vector-node"><Database/><span><small>Retrieve</small><b>Vector database</b></span></div>
+            <div className="flow-node context-node"><Sparkles/><span><small>Ground</small><b>RAG context</b></span></div>
+            <div className="flow-node llm-node"><BrainCircuit/><span><small>Reason</small><b>LLM response</b></span></div>
+            <div className="flow-node answer-node"><MessageSquare/><span><small>Output</small><b>Grounded answer</b></span></div>
+          </div>
+          <div className="flow-status"><span><i/> Pipeline active</span><b>6 connected steps</b></div>
+        </div>
       </section>
 
       <section className="sap section">
