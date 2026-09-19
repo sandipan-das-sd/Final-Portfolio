@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { ProjectSlider } from "@/components/ProjectSlider";
+import { ContactForm } from "@/components/ContactForm";
+import { MotionLayer } from "@/components/MotionLayer";
 import { getResumeUrl, listProjects } from "@/lib/portfolio";
 import {
   ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database,
@@ -38,6 +40,7 @@ export default async function Home() {
   const [projects, resumeUrl] = await Promise.all([listProjects(), getResumeUrl()]);
   return (
     <main>
+      <MotionLayer />
       <Header />
 
       <section className="hero" id="top">
@@ -133,9 +136,9 @@ export default async function Home() {
         <div className="resume-viewer"><iframe src={`${resumeUrl}#view=FitH&toolbar=1`} title="Sandipan Das résumé PDF" /><div className="resume-mobile-fallback"><span>Sandipan Das</span><b>Full Stack Developer</b><p>The résumé preview opens best in your browser&apos;s PDF viewer.</p><a href={resumeUrl} target="_blank" rel="noreferrer">View résumé <ArrowUpRight /></a></div></div>
       </section>
 
-      <section className="contact section">
-        <div><p className="eyebrow"><i /> Available for opportunities</p><h2>Have a problem<br />worth building?</h2></div>
-        <a className="contact-circle" href="mailto:dsandipan3002@gmail.com"><Mail /><span>Say hello</span><ArrowUpRight /></a>
+      <section className="contact section" id="contact">
+        <div><p className="eyebrow"><i /> Available for opportunities</p><h2>Have a problem<br />worth building?</h2><p className="contact-note">Tell me what you&apos;re working on. Your message is saved securely and delivered to my inbox when email delivery is connected.</p></div>
+        <ContactForm />
       </section>
 
       <footer><a className="brand" href="#top"><span>SD</span> Sandipan Das</a><p>Full Stack Developer · Kolkata, West Bengal</p><div><a href="tel:+918335019404">+91 83350 19404</a><a href="mailto:dsandipan3002@gmail.com">Email</a><a href="https://github.com/sandipan-das-sd">GitHub</a></div><small>© 2026 Sandipan Das</small></footer>
