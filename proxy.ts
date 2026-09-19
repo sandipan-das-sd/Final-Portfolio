@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const user=process.env.ADMIN_USER, password=process.env.ADMIN_PASSWORD;
   if(!user||!password)return new NextResponse("Set ADMIN_USER and ADMIN_PASSWORD to enable the portfolio admin.",{status:503});
   const header=request.headers.get("authorization");
