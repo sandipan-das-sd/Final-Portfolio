@@ -11,12 +11,12 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Code2, title: "Full-stack products", text: "Responsive React experiences backed by secure Node.js or Spring Boot APIs." },
-  { icon: ServerCog, title: "Backend & APIs", text: "REST architecture, JWT authentication, real-time systems and scalable business logic." },
-  { icon: Smartphone, title: "Mobile applications", text: "Cross-platform React Native products with notifications, payments and cloud services." },
-  { icon: CloudCog, title: "Cloud & deployment", text: "Practical AWS deployments with Nginx, PM2, Git workflows and Docker foundations." },
-  { icon: Workflow, title: "SAP ABAP", text: "Open SQL, Data Dictionary objects, reports, modularization, CRUD and debugging." },
-  { icon: Layers3, title: "Product engineering", text: "From requirements and data models to polished interfaces and production delivery." },
+  { icon: Code2, title: "Full-stack products", text: "Responsive React experiences backed by secure Node.js or Spring Boot APIs.", href: "/services/full-stack-development" },
+  { icon: ServerCog, title: "Business websites", text: "Fast, responsive websites with clear conversion paths and technical SEO foundations.", href: "/services/website-development-kolkata" },
+  { icon: Smartphone, title: "Mobile applications", text: "Cross-platform React Native products with notifications, payments and cloud services.", href: "/services/mobile-app-development" },
+  { icon: BrainCircuit, title: "AI applications", text: "RAG, LangGraph agents, vector search and useful LLM-powered product workflows.", href: "/services/ai-ml-development" },
+  { icon: Workflow, title: "SAP ABAP", text: "Open SQL, Data Dictionary objects, reports, modularization, CRUD and debugging.", href: "/services/sap-abap-development" },
+  { icon: Layers3, title: "SAP integrations", text: "Technical MII, FICO and MM support for defined enterprise requirements.", href: "/services/sap-mii-integration" },
 ];
 
 const stack = [
@@ -81,7 +81,7 @@ export default async function Home() {
 
       <section className="services section" id="services">
         <div className="section-head"><div><p className="section-label">02 / What I do</p><h2>Ideas, engineered<br />end to end.</h2></div><p>I combine product thinking with hands-on development to take useful software from concept to deployment.</p></div>
-        <div className="service-grid">{services.map((service, index) => <article key={service.title}><span>0{index + 1}</span><service.icon /><h3>{service.title}</h3><p>{service.text}</p><ArrowUpRight /></article>)}</div>
+        <div className="service-grid">{services.map((service, index) => <a href={service.href} key={service.title}><span>0{index + 1}</span><service.icon /><h3>{service.title}</h3><p>{service.text}</p><ArrowUpRight /></a>)}</div>
       </section>
 
       <section className="work section" id="work">

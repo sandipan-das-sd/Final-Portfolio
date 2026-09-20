@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { servicePages } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [{
@@ -6,5 +7,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 1,
-  }];
+  }, {
+    url: "https://www.sandipandas.website/services",
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }, ...servicePages.map((service) => ({
+    url: `https://www.sandipandas.website/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))];
 }

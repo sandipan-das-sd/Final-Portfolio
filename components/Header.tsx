@@ -4,7 +4,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
-  ["Work", "#work"], ["Services", "#services"], ["Education", "#education"], ["Résumé", "#resume"],
+  ["Work", "/#work"], ["Services", "/services"], ["Education", "/#education"], ["Résumé", "/#resume"],
 ];
 
 export function Header() {
@@ -26,7 +26,7 @@ export function Header() {
   const close = () => setOpen(false);
   return (
     <header className={`nav-wrap${scrolled ? " scrolled" : ""}${open ? " menu-open" : ""}`}>
-      <a className="brand" href="#top" onClick={close}><span>SD</span> Sandipan Das</a>
+      <a className="brand" href="/#top" onClick={close}><span>SD</span> Sandipan Das</a>
       <nav className={open ? "open" : ""} aria-label="Primary navigation">
         {links.map(([label, href]) => <a href={href} onClick={close} key={href}>{label}</a>)}
         <a className="nav-cta" href="mailto:dsandipan3002@gmail.com" onClick={close}>Let&apos;s talk <ArrowUpRight size={15} /></a>
