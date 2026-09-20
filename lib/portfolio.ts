@@ -8,6 +8,7 @@ export type PortfolioProject = {
 export type ProjectInput = Omit<PortfolioProject, "id">;
 
 export const defaultProjects: PortfolioProject[] = [
+  ["Aaranya","Restaurant experience",["UI/UX","Responsive Web","JavaScript","Motion"],"An editorial restaurant website blending modern Indian dining with immersive storytelling, seasonal menus and a polished table-booking experience.","","/work/aaranya-restaurant.png"],
   ["Hospital Management System","Healthcare platform",["Java","Spring Boot","React","MySQL","JWT"],"A secure hospital operations platform with role-based access for seven user types, covering appointments, prescriptions, billing and patient records.","https://hospitalmangemntsystem.com/","/generated/hospital-management-dashboard.png"],
   ["MelBuddy","Social activity platform",["Node.js","React Native","MongoDB","AWS"],"A social activity booking product with identity verification, payments, real-time notifications, moderation and scalable cloud integrations.","https://www.melbuddy.com","/work/melbuddy.jpg"],
   ["Real-Time Chat","Communication product",["MERN","Socket.io","Redux","JWT"],"A scalable chat application built for instant bidirectional communication, authenticated sessions and reliable concurrent conversations.","https://github.com/sandipan-das-sd/MERN_ChatApp","/work/chat-app.png"],
