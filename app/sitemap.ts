@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [{
-    url: "https://sandipandas.website",
+    url: "https://www.sandipandas.website/",
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 1,
