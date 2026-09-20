@@ -34,6 +34,29 @@ const sapProjects = [
   ["Sales Report Generator", "Classical reports, modularization, debugging and testing in ADT."],
 ];
 
+const mobileApps = [
+  {
+    name: "PulpitFill",
+    type: "Faith-tech marketplace · iOS",
+    description: "A role-based mobile marketplace helping churches find trusted preachers, manage requests, coordinate availability and communicate in one product.",
+    platforms: ["iPhone", "iPad", "Role-based accounts", "Messaging"],
+    images: ["/work/pulpitfill-ios-dashboard.webp", "/work/pulpitfill-ios-messages.webp"],
+    storeLabel: "View on the App Store",
+    storeUrl: "https://apps.apple.com/us/app/pulpitfill/id6799709331",
+    websiteUrl: "https://pulpitfill.com",
+  },
+  {
+    name: "Gyanoda",
+    type: "EdTech learning app · Android",
+    description: "A mobile learning experience for WBJEE preparation with previous-year questions, step-by-step video solutions, course discovery and doubt support.",
+    platforms: ["Android", "Video learning", "Mock tests", "Secure accounts"],
+    images: ["/work/gyanoda-android-home.webp", "/work/gyanoda-android-learning.webp"],
+    storeLabel: "Get it on Google Play",
+    storeUrl: "https://play.google.com/store/apps/details?id=com.gyanodapyq.studybloom24",
+    websiteUrl: "https://www.gyanoda.com",
+  },
+];
+
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
@@ -89,8 +112,20 @@ export default async function Home() {
         <ProjectSlider projects={projects} />
       </section>
 
+      <section className="mobile-work section" id="mobile-work">
+        <div className="section-head"><div><p className="section-label">04 / Mobile products</p><h2>Apps built for<br />the small screen.</h2></div><p>Production mobile experiences spanning community marketplaces and exam preparation, available through verified public store listings.</p></div>
+        <div className="mobile-app-grid">{mobileApps.map((app) => <article className="mobile-app-card" key={app.name}>
+          <div className="mobile-app-visual">
+            <div className="phone-shot phone-shot-primary"><Image src={app.images[0]} alt={`${app.name} mobile application screen`} fill sizes="(max-width: 700px) 58vw, 24vw" /></div>
+            <div className="phone-shot phone-shot-secondary"><Image src={app.images[1]} alt={`${app.name} secondary mobile application screen`} fill sizes="(max-width: 700px) 42vw, 18vw" /></div>
+            <span className="mobile-platform-orbit">{app.name === "PulpitFill" ? "iOS" : "Android"}</span>
+          </div>
+          <div className="mobile-app-copy"><p>{app.type}</p><h3>{app.name}</h3><div className="mobile-tags">{app.platforms.map((platform) => <span key={platform}>{platform}</span>)}</div><p>{app.description}</p><div className="mobile-app-links"><a href={app.storeUrl} target="_blank" rel="noreferrer">{app.storeLabel} <ArrowUpRight /></a><a href={app.websiteUrl} target="_blank" rel="noreferrer">Visit website <ArrowUpRight /></a></div></div>
+        </article>)}</div>
+      </section>
+
       <section className="skills section" id="skills">
-        <div className="skills-copy"><p className="section-label">04 / Toolkit</p><h2>One developer,<br />across the stack.</h2><p>Comfortable moving between interface details, server architecture, data and deployment.</p></div>
+        <div className="skills-copy"><p className="section-label">05 / Toolkit</p><h2>One developer,<br />across the stack.</h2><p>Comfortable moving between interface details, server architecture, data and deployment.</p></div>
         <div className="stack-list">{stack.map(([name, list], index) => <div key={name}><span>0{index + 1}</span><b>{name}</b><p>{list}</p><ArrowUpRight size={18} /></div>)}</div>
         <div className="tech-marquee"><div>{[...stack.flatMap(item => item[1].split(", ")), ...stack.flatMap(item => item[1].split(", "))].map((tech, i) => <span key={`${tech}-${i}`}>{tech} <i>✦</i></span>)}</div></div>
       </section>
@@ -144,7 +179,7 @@ export default async function Home() {
       </section>
 
       <section className="journey section" id="education">
-        <p className="section-label">05 / Education</p>
+        <p className="section-label">06 / Education</p>
         <div className="timeline">
           <article><span>2022 — 2026</span><GraduationCap /><div><h3>B.Tech in Computer Science</h3><p>Future Institute of Engineering and Management · MAKAUT</p><b>CGPA 7.39 / 10</b></div></article>
           <article><span>2020 — 2022</span><GraduationCap /><div><h3>Higher Secondary · Science</h3><p>Naihati Narendra Vidyaniketan · West Bengal</p><b>83.6%</b></div></article>
