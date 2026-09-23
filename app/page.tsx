@@ -6,7 +6,7 @@ import { MotionLayer } from "@/components/MotionLayer";
 import { getResumeUrl, listProjects } from "@/lib/portfolio";
 import {
   ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database, MessageSquare, Search, Sparkles,
-  CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail,
+  CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail, Package,
   ServerCog, Smartphone, Workflow,
 } from "lucide-react";
 
@@ -122,6 +122,11 @@ export default async function Home() {
           </div>
           <div className="mobile-app-copy"><p>{app.type}</p><h3>{app.name}</h3><div className="mobile-tags">{app.platforms.map((platform) => <span key={platform}>{platform}</span>)}</div><p>{app.description}</p><div className="mobile-app-links"><a href={app.storeUrl} target="_blank" rel="noreferrer">{app.storeLabel} <ArrowUpRight /></a><a href={app.websiteUrl} target="_blank" rel="noreferrer">Visit website <ArrowUpRight /></a></div></div>
         </article>)}</div>
+      </section>
+
+      <section className="oss-feature section" id="open-source">
+        <div className="oss-copy"><p className="eyebrow"><i /> Featured open source</p><div className="oss-title"><span><Package /></span><h2>LaTeX Content<br />Renderer.</h2></div><p>A universal npm package I built to render mathematics, chemistry, molecular structures and scientific content across web and mobile applications—with safe output for streamed AI responses.</p><div className="oss-pills"><span>TypeScript</span><span>MathJax 3</span><span>SMILES</span><span>React Native</span><span>MIT</span></div><div className="oss-links"><a className="button lime" href="/open-source/latex-content-renderer">Explore the package <ArrowUpRight /></a><a href="https://www.npmjs.com/package/latex-content-renderer" target="_blank" rel="noreferrer">npm <ArrowUpRight /></a><a href="https://github.com/sandipan-das-sd/latex-content-renderer" target="_blank" rel="noreferrer"><Github /> GitHub <ArrowUpRight /></a></div></div>
+        <div className="oss-terminal" aria-label="latex-content-renderer installation and React example"><div className="oss-terminal-bar"><span><i/><i/><i/></span><b>quick-start.tsx</b><small>v1.1.3</small></div><pre><code><em>$</em> npm install latex-content-renderer{"\n\n"}<strong>import</strong> &#123; SciContent &#125; <strong>from</strong>{"\n"}  <mark>&apos;latex-content-renderer&apos;</mark>;{"\n\n"}<strong>export default function</strong> Science() &#123;{"\n"}  <strong>return</strong> &lt;SciContent{"\n"}    content=&#123;<mark>&quot;E = mc² · H₂O · CCO&quot;</mark>&#125;{"\n"}  /&gt;;{"\n"}&#125;</code></pre><div className="oss-output"><span>Rendered output</span><b>E = mc<sup>2</sup></b><i>H<sub>2</sub>O</i><svg viewBox="0 0 120 50" aria-label="Simple molecular structure illustration"><path d="M10 25h25l15-18 20 18 20-18 20 18"/><circle cx="10" cy="25" r="4"/><circle cx="110" cy="25" r="4"/></svg></div></div>
       </section>
 
       <section className="skills section" id="skills">

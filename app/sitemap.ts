@@ -12,6 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.9,
+  }, {
+    url: "https://www.sandipandas.website/open-source/latex-content-renderer",
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.9,
   }, ...servicePages.map((service) => ({
     url: `https://www.sandipandas.website/services/${service.slug}`,
     lastModified: new Date(),
