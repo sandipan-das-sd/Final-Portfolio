@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.9,
   }, {
+    url: "https://www.sandipandas.website/projects/ai-text-classifier",
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }, {
     url: "https://www.sandipandas.website/open-source/latex-content-renderer",
     lastModified: new Date(),
     changeFrequency: "monthly",
