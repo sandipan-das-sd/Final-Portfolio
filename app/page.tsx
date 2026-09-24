@@ -108,7 +108,7 @@ export default async function Home() {
       </section>
 
       <section className="work section" id="work">
-        <div className="section-head"><div><p className="section-label">03 / Selected work</p><h2>Built to solve<br />real problems.</h2></div><p>Products I&apos;ve helped build across healthcare, community, fintech, enterprise, communication and travel.</p></div>
+        <div className="section-head"><div><p className="section-label">03 / Selected work</p><h2>Built to solve<br />real problems.</h2></div><p>Products I&apos;ve built across AI, healthcare, community, fintech, enterprise, communication and travel.</p></div>
         <ProjectSlider projects={projects} />
       </section>
 
