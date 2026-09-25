@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { servicePages } from "@/lib/services";
+import { defaultProjects } from "@/lib/portfolio";
+import { projectSlug } from "@/lib/projectCaseStudies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [{
@@ -13,16 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.9,
   }, {
-    url: "https://www.sandipandas.website/projects/ai-text-classifier",
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.9,
-  }, {
     url: "https://www.sandipandas.website/open-source/latex-content-renderer",
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.9,
-  }, ...servicePages.map((service) => ({
+  }, ...defaultProjects.map((project) => ({
+    url: `https://www.sandipandas.website/projects/${projectSlug(project.title)}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  })), ...servicePages.map((service) => ({
     url: `https://www.sandipandas.website/services/${service.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
