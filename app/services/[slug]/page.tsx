@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ProcessCarousel } from "@/components/ProcessCarousel";
 import { getService, servicePages } from "@/lib/services";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -36,7 +37,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <header className="service-detail-hero"><Link href="/services"><ArrowLeft /> All services</Link><p className="eyebrow"><i /> {service.eyebrow}</p><h1>{service.title}</h1><p>{service.intro}</p><div><a className="button lime" href={`mailto:dsandipan3002@gmail.com?subject=${encodeURIComponent(service.shortTitle + " enquiry")}`}>Start a conversation <ArrowUpRight /></a><Link className="under-link" href="/#work">See relevant work <ArrowUpRight /></Link></div></header>
       <section className="service-outcomes"><p className="section-label">01 / What you receive</p><div>{service.outcomes.map((item) => <p key={item}><Check /> {item}</p>)}</div></section>
       <section className="service-two-col"><div><p className="section-label">02 / Capabilities</p><h2>What I can build.</h2></div><ul>{service.capabilities.map((item) => <li key={item}>{item}</li>)}</ul></section>
-      <section className="service-process"><p className="section-label">03 / Delivery</p><h2>A practical path from requirement to release.</h2><div>{service.process.map((item, index) => <article key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></article>)}</div></section>
+      <section className="service-process"><p className="section-label">03 / Delivery</p><h2>A practical path from requirement to release.</h2><p className="service-process-intro">Each stage creates something concrete to review, keeping the technical work aligned with the business goal.</p><ProcessCarousel steps={service.process.map(title=>({title}))}/></section>
       <section className="service-stack"><p className="section-label">04 / Relevant toolkit</p><div>{service.technologies.map((item) => <span key={item}>{item}</span>)}</div></section>
       <section className="service-faq"><div><p className="section-label">05 / FAQ</p><h2>Useful answers before we begin.</h2></div><div>{service.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
       <section className="service-cta"><p>Need this capability for your business?</p><h2>Tell me what needs to work.</h2><a href={`mailto:dsandipan3002@gmail.com?subject=${encodeURIComponent(service.shortTitle + " enquiry")}`}>Start a conversation <ArrowUpRight /></a></section>

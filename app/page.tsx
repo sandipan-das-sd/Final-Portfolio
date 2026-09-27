@@ -4,13 +4,14 @@ import { Header } from "@/components/Header";
 import { ProjectSlider } from "@/components/ProjectSlider";
 import { ContactForm } from "@/components/ContactForm";
 import { LeadChatbot } from "@/components/LeadChatbot";
+import { ProcessCarousel } from "@/components/ProcessCarousel";
 import { MotionLayer } from "@/components/MotionLayer";
 import { getResumeUrl, listProjects } from "@/lib/portfolio";
 import { automationPages, industryPages } from "@/lib/solutions";
 import {
   ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database, MessageSquare, Search, Sparkles,
   CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail, Package,
-  ServerCog, Smartphone, Workflow, Factory, Leaf, Wheat, Pill, Truck, ShoppingBag, School, Gauge, PlugZap, BarChart3, Users, PenTool, FlaskConical, Rocket, MoveRight,
+  ServerCog, Smartphone, Workflow, Factory, Leaf, Wheat, Pill, Truck, ShoppingBag, School, Gauge, PlugZap, BarChart3,
 } from "lucide-react";
 
 const services = [
@@ -36,12 +37,12 @@ const industries = [
 ];
 
 const process = [
-  { icon: Search, title: "Discover the business problem", text: "Clarify the goal, bottlenecks and result that matters." },
-  { icon: Users, title: "Map users, data and workflows", text: "Understand who does what, with which information and tools." },
-  { icon: PenTool, title: "Design the right solution", text: "Shape the experience, architecture and delivery priorities." },
-  { icon: Code2, title: "Build in clear milestones", text: "Deliver working progress in focused, reviewable stages." },
-  { icon: FlaskConical, title: "Test with real scenarios", text: "Validate the important journeys, edge cases and integrations." },
-  { icon: Rocket, title: "Launch, train and improve", text: "Release confidently, support adoption and learn from usage." },
+  { title: "Discover the business problem", text: "Clarify the goal, bottlenecks and result that matters." },
+  { title: "Map users, data and workflows", text: "Understand who does what, with which information and tools." },
+  { title: "Design the right solution", text: "Shape the experience, architecture and delivery priorities." },
+  { title: "Build in clear milestones", text: "Deliver working progress in focused, reviewable stages." },
+  { title: "Test with real scenarios", text: "Validate the important journeys, edge cases and integrations." },
+  { title: "Launch, train and improve", text: "Release confidently, support adoption and learn from usage." },
 ];
 const faqs = [
   ["Is the consultation really free?", "Yes. The first requirement review is free and helps clarify scope, priorities, risks and the right delivery approach."],
@@ -246,7 +247,7 @@ export default async function Home() {
         <ContactForm />
       </section>
 
-      <section className="delivery section" id="process"><div className="delivery-head"><p className="section-label">How I work</p><h2>From problem to production, step by step.</h2><p>A clear path keeps decisions visible, reduces surprises and turns progress into something you can review.</p></div><ol className="delivery-flow">{process.map((item, index) => <li key={item.title} style={{"--step-delay":`${index * 90}ms`} as React.CSSProperties}><div className="step-top"><span>{String(index + 1).padStart(2, "0")}</span><i><item.icon /></i>{index < process.length - 1 && <MoveRight className="step-arrow" />}</div><b>{item.title}</b><p>{item.text}</p></li>)}</ol></section>
+      <section className="delivery section" id="process"><div className="delivery-head"><p className="section-label">How I work</p><h2>From problem to production, step by step.</h2><p>A clear path keeps decisions visible, reduces surprises and turns progress into something you can review.</p></div><ProcessCarousel steps={process}/></section>
 
       <section className="home-faq section"><div><p className="section-label">Frequently asked questions</p><h2>Before we start.</h2></div><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
