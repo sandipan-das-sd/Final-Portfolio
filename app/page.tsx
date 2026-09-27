@@ -33,10 +33,10 @@ const industries = [
   { icon: Factory, name: "Manufacturing", detail: "Production, inventory and plant workflows" }, { icon: Leaf, name: "Tea industry", detail: "Garden, factory and supply visibility" }, { icon: Wheat, name: "Food processing", detail: "Batch, quality and dispatch systems" }, { icon: Pill, name: "Pharmaceuticals", detail: "Controlled operations and traceability" }, { icon: Truck, name: "Logistics", detail: "Fleet, shipment and delivery workflows" }, { icon: ShoppingBag, name: "Retail", detail: "Orders, stock and customer operations" }, { icon: School, name: "Education", detail: "Learning, assessment and administration" },
 ];
 
-const process = ["Discover the business problem", "Map users, data and workflows", "Design and estimate the solution", "Build in clear milestones", "Test with real scenarios", "Launch, train and improve"];
+const process = ["Discover the business problem", "Map users, data and workflows", "Design the right solution", "Build in clear milestones", "Test with real scenarios", "Launch, train and improve"];
 const faqs = [
   ["Is the consultation really free?", "Yes. The first requirement review is free and helps clarify scope, priorities, risks and the right delivery approach."],
-  ["Is the online estimate a final quotation?", "No. It is an indicative planning range. A fixed proposal follows after the workflow and technical requirements are reviewed."],
+  ["What happens after I submit my requirement?", "I review the workflow, technical needs and priorities, then contact you with recommended next steps and a clear delivery plan."],
   ["Can you automate our existing tools with n8n?", "Yes. I can connect supported APIs, webhooks, email, databases, spreadsheets and business tools, with monitoring and failure handling."],
   ["Can we see enquiries and requirements in an admin panel?", "Yes. Consultation requests and chatbot leads are stored in the protected portfolio admin panel, with direct email reply links."],
   ["Do you build complete enterprise ERP software?", "I build scoped custom ERP modules and operational platforms. Large programmes begin with discovery and are delivered in milestones."],
@@ -233,7 +233,7 @@ export default async function Home() {
       </section>
 
       <section className="contact section" id="contact">
-        <div><p className="eyebrow"><i /> Free consultation</p><h2>Have a process<br />worth improving?</h2><p className="contact-note">Choose a solution and project size for an instant planning estimate. Your full requirement is saved securely in my admin panel and delivered to my inbox when email delivery is connected.</p></div>
+        <div><p className="eyebrow"><i /> Free consultation</p><h2>Have a process<br />worth improving?</h2><p className="contact-note">Tell me about your workflow, goals and timeline. Your full requirement is saved securely in my admin panel and delivered to my inbox when email delivery is connected.</p></div>
         <ContactForm />
       </section>
 
