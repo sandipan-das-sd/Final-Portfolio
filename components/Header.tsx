@@ -4,7 +4,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
-  ["Work", "/#work"], ["Services", "/services"], ["Education", "/#education"], ["Résumé", "/#resume"],
+  ["Work", "/#work"], ["Automation", "/#automation"], ["Industries", "/#industries"], ["Services", "/services"], ["Résumé", "/#resume"],
 ];
 
 export function Header() {
@@ -29,7 +29,7 @@ export function Header() {
       <a className="brand" href="/#top" onClick={close}><span>SD</span> Sandipan Das</a>
       <nav className={open ? "open" : ""} aria-label="Primary navigation">
         {links.map(([label, href]) => <a href={href} onClick={close} key={href}>{label}</a>)}
-        <a className="nav-cta" href="mailto:dsandipan3002@gmail.com" onClick={close}>Let&apos;s talk <ArrowUpRight size={15} /></a>
+        <a className="nav-cta" href="/#contact" onClick={close}>Free consultation <ArrowUpRight size={15} /></a>
       </nav>
       <button className="mobile-menu" onClick={() => setOpen(value => !value)} aria-label="Toggle navigation" aria-expanded={open}>{open ? <X /> : <Menu />}</button>
     </header>
