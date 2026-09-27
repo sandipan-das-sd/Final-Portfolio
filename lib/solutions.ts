@@ -570,6 +570,138 @@ export const industryPages: SolutionPage[] = [
   },
 ];
 
+industryPages.push(
+  {
+    slug: "healthcare",
+    title: "Healthcare Software Solutions",
+    eyebrow: "Industry solution",
+    description:
+      "Secure patient, appointment, clinical and administrative workflows for healthcare organizations.",
+    intro:
+      "Healthcare teams need connected information without losing control of privacy or responsibility. I build scoped systems around clearly defined roles and operational journeys.",
+    capabilities: [
+      "Patient and appointment management",
+      "Role-based clinical dashboards",
+      "Prescriptions and records",
+      "Billing and administration",
+      "Notifications and follow-up",
+      "Operational reporting",
+    ],
+    outcomes: [
+      "Connected patient-service journeys",
+      "Less duplicate administration",
+      "Clear responsibility by role",
+    ],
+    process: delivery,
+    technologies: [
+      "Spring Boot",
+      "React",
+      "MySQL",
+      "JWT",
+      "Dashboards",
+      "APIs",
+    ],
+    faqs: [
+      {
+        question: "Can access differ by role?",
+        answer:
+          "Yes. Permissions can be separated for clinicians, reception, administration, finance and patients.",
+      },
+      {
+        question: "Does software alone ensure compliance?",
+        answer:
+          "No. Technical controls support compliance, while governance and formal obligations remain with the healthcare organization.",
+      },
+    ],
+  },
+  {
+    slug: "fintech",
+    title: "Fintech Software Solutions",
+    eyebrow: "Industry solution",
+    description:
+      "Transaction, onboarding, wallet and agent workflows designed around trust and operational control.",
+    intro:
+      "Fintech products must make complex transactions understandable while respecting provider, security and regulatory boundaries.",
+    capabilities: [
+      "KYC onboarding",
+      "Wallet workflows",
+      "Bills and payments",
+      "Agent dashboards",
+      "Transaction history",
+      "Provider integrations",
+    ],
+    outcomes: [
+      "Clearer transaction journeys",
+      "Connected agent operations",
+      "Better activity visibility",
+    ],
+    process: delivery,
+    technologies: [
+      "React Native",
+      "Node.js",
+      "Payments",
+      "KYC",
+      "APIs",
+      "Cloud",
+    ],
+    faqs: [
+      {
+        question: "Can external payment providers be connected?",
+        answer:
+          "Yes, when the provider supplies supported APIs, credentials and an approved integration path.",
+      },
+      {
+        question: "How is sensitive data handled?",
+        answer:
+          "The design minimizes exposure, validates inputs and keeps regulated responsibilities with approved providers.",
+      },
+    ],
+  },
+  {
+    slug: "hospitality",
+    title: "Hospitality Software Solutions",
+    eyebrow: "Industry solution",
+    description:
+      "Web, reservation, service and customer journeys for restaurants and hospitality businesses.",
+    intro:
+      "Hospitality technology should express the brand while making discovery, enquiries and booking effortless on every device.",
+    capabilities: [
+      "Restaurant websites",
+      "Menu experiences",
+      "Reservation journeys",
+      "Service booking",
+      "Customer enquiries",
+      "Operational integrations",
+    ],
+    outcomes: [
+      "Stronger digital presentation",
+      "Simpler booking journeys",
+      "More qualified enquiries",
+    ],
+    process: delivery,
+    technologies: [
+      "Next.js",
+      "Responsive Web",
+      "Booking",
+      "Notifications",
+      "Analytics",
+      "Cloud",
+    ],
+    faqs: [
+      {
+        question: "Can an existing booking tool be connected?",
+        answer:
+          "Yes, when the platform offers an embed, API or supported integration.",
+      },
+      {
+        question: "Can staff update menus or services?",
+        answer:
+          "Yes. Editable content workflows can be included where ongoing updates are required.",
+      },
+    ],
+  },
+);
+
 export const getAutomation = (slug: string) =>
   automationPages.find((item) => item.slug === slug);
 export const getIndustry = (slug: string) =>
