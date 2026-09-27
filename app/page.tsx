@@ -2,12 +2,13 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { ProjectSlider } from "@/components/ProjectSlider";
 import { ContactForm } from "@/components/ContactForm";
+import { LeadChatbot } from "@/components/LeadChatbot";
 import { MotionLayer } from "@/components/MotionLayer";
 import { getResumeUrl, listProjects } from "@/lib/portfolio";
 import {
   ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database, MessageSquare, Search, Sparkles,
   CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail, Package,
-  ServerCog, Smartphone, Workflow,
+  ServerCog, Smartphone, Workflow, Factory, Leaf, Wheat, Pill, Truck, ShoppingBag, School, Gauge, PlugZap, BarChart3,
 } from "lucide-react";
 
 const services = [
@@ -17,6 +18,28 @@ const services = [
   { icon: BrainCircuit, title: "AI applications", text: "RAG, LangGraph agents, vector search and useful LLM-powered product workflows.", href: "/services/ai-ml-development" },
   { icon: Workflow, title: "SAP ABAP", text: "Open SQL, Data Dictionary objects, reports, modularization, CRUD and debugging.", href: "/services/sap-abap-development" },
   { icon: Layers3, title: "SAP integrations", text: "Technical MII, FICO and MM support for defined enterprise requirements.", href: "/services/sap-mii-integration" },
+];
+
+const automationServices = [
+  { icon: Workflow, title: "n8n workflow automation", text: "Connect forms, CRMs, email, spreadsheets and APIs to remove repetitive work." },
+  { icon: Gauge, title: "Custom ERP systems", text: "Role-based operations, inventory, orders, reporting and approvals in one system." },
+  { icon: Bot, title: "AI assistants & agents", text: "Grounded chatbots, document search and practical AI workflows connected to your data." },
+  { icon: PlugZap, title: "System integrations", text: "Reliable data flow between SAP, internal software, third-party tools and cloud services." },
+  { icon: BarChart3, title: "Dashboards & analytics", text: "Turn scattered operational data into clear, decision-ready views and alerts." },
+  { icon: CloudCog, title: "Cloud & deployment", text: "Secure deployment, databases, monitoring and scalable application infrastructure." },
+];
+
+const industries = [
+  { icon: Factory, name: "Manufacturing", detail: "Production, inventory and plant workflows" }, { icon: Leaf, name: "Tea industry", detail: "Garden, factory and supply visibility" }, { icon: Wheat, name: "Food processing", detail: "Batch, quality and dispatch systems" }, { icon: Pill, name: "Pharmaceuticals", detail: "Controlled operations and traceability" }, { icon: Truck, name: "Logistics", detail: "Fleet, shipment and delivery workflows" }, { icon: ShoppingBag, name: "Retail", detail: "Orders, stock and customer operations" }, { icon: School, name: "Education", detail: "Learning, assessment and administration" },
+];
+
+const process = ["Discover the business problem", "Map users, data and workflows", "Design and estimate the solution", "Build in clear milestones", "Test with real scenarios", "Launch, train and improve"];
+const faqs = [
+  ["Is the consultation really free?", "Yes. The first requirement review is free and helps clarify scope, priorities, risks and the right delivery approach."],
+  ["Is the online estimate a final quotation?", "No. It is an indicative planning range. A fixed proposal follows after the workflow and technical requirements are reviewed."],
+  ["Can you automate our existing tools with n8n?", "Yes. I can connect supported APIs, webhooks, email, databases, spreadsheets and business tools, with monitoring and failure handling."],
+  ["Can we see enquiries and requirements in an admin panel?", "Yes. Consultation requests and chatbot leads are stored in the protected portfolio admin panel, with direct email reply links."],
+  ["Do you build complete enterprise ERP software?", "I build scoped custom ERP modules and operational platforms. Large programmes begin with discovery and are delivered in milestones."],
 ];
 
 const stack = [
@@ -107,8 +130,18 @@ export default async function Home() {
         <div className="service-grid">{services.map((service, index) => <a href={service.href} key={service.title}><span>0{index + 1}</span><service.icon /><h3>{service.title}</h3><p>{service.text}</p><ArrowUpRight /></a>)}</div>
       </section>
 
+      <section className="automation section" id="automation">
+        <div className="section-head"><div><p className="section-label">03 / Business automation</p><h2>Less manual work.<br />Better operations.</h2></div><p>From n8n automations to custom ERP platforms, I design connected systems around the way your business actually works.</p></div>
+        <div className="automation-grid">{automationServices.map(item => <article key={item.title}><item.icon /><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+      </section>
+
+      <section className="industries section" id="industries">
+        <div className="industry-intro"><p className="section-label">Industry-specific solutions</p><h2>Smart technology for solving industry problems.</h2><p>Software is most useful when it understands the workflow behind the screen. Each engagement starts with your users, operational constraints and measurable outcome.</p><a className="button lime" href="#contact">Book a free consultation <ArrowUpRight size={17} /></a></div>
+        <div className="industry-grid">{industries.map(item => <article key={item.name}><item.icon /><span><b>{item.name}</b><small>{item.detail}</small></span><ArrowUpRight /></article>)}</div>
+      </section>
+
       <section className="work section" id="work">
-        <div className="section-head"><div><p className="section-label">03 / Selected work</p><h2>Built to solve<br />real problems.</h2></div><p>Products I&apos;ve built across AI, healthcare, community, fintech, enterprise, communication and travel.</p></div>
+        <div className="section-head"><div><p className="section-label">04 / Selected work</p><h2>Built to solve<br />real problems.</h2></div><p>Products I&apos;ve built across AI, healthcare, community, fintech, enterprise, communication and travel.</p></div>
         <ProjectSlider projects={projects} />
       </section>
 
@@ -200,11 +233,16 @@ export default async function Home() {
       </section>
 
       <section className="contact section" id="contact">
-        <div><p className="eyebrow"><i /> Available for opportunities</p><h2>Have a problem<br />worth building?</h2><p className="contact-note">Tell me what you&apos;re working on. Your message is saved securely and delivered to my inbox when email delivery is connected.</p></div>
+        <div><p className="eyebrow"><i /> Free consultation</p><h2>Have a process<br />worth improving?</h2><p className="contact-note">Choose a solution and project size for an instant planning estimate. Your full requirement is saved securely in my admin panel and delivered to my inbox when email delivery is connected.</p></div>
         <ContactForm />
       </section>
 
+      <section className="delivery section" id="process"><div><p className="section-label">How I work</p><h2>From problem to production, step by step.</h2></div><ol>{process.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><b>{item}</b></li>)}</ol></section>
+
+      <section className="home-faq section"><div><p className="section-label">Frequently asked questions</p><h2>Before we start.</h2></div><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
+
       <footer><a className="brand" href="#top"><span>SD</span> Sandipan Das</a><p>Full Stack Developer · Kolkata, West Bengal</p><div><a href="tel:+918335019404">+91 83350 19404</a><a href="mailto:dsandipan3002@gmail.com">Email</a><a href="https://github.com/sandipan-das-sd">GitHub</a></div><small>© 2026 Sandipan Das</small></footer>
+      <LeadChatbot />
     </main>
   );
 }
