@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Check, ExternalLink, Github, Scale, Target, Users } from "lucide-react";
 import { Header } from "@/components/Header";
+import { ProjectTechnology } from "@/components/ProjectTechnology";
 import { defaultProjects, listProjects } from "@/lib/portfolio";
 import { getProjectInsight, projectSlug } from "@/lib/projectCaseStudies";
 
@@ -59,7 +60,7 @@ export default async function ProjectCaseStudy({ params }: PageProps) {
 
     <section className="project-case-value"><div><p className="section-label">03 / Benefits</p><h2>Value for users and the business.</h2><div>{insight.benefits.map(item=><p key={item}><Check />{item}</p>)}</div></div><div><p className="section-label">04 / Trade-offs</p><h2>Built with constraints in view.</h2><div>{insight.tradeoffs.map(item=><p key={item}><Scale />{item}</p>)}</div></div></section>
 
-    <section className="project-case-stack"><p className="section-label">05 / Technology stack</p><div>{project.tech.map(item=><span key={item}>{item}</span>)}</div></section>
+    <ProjectTechnology project={project.title} technologies={project.tech}/>
 
     <section className="project-case-process"><p className="section-label">06 / Delivery approach</p><div>{[["Discover","Understand the users, business objective and constraints."],["Design","Map the core journey and reduce unnecessary interaction."],["Build","Implement maintainable interfaces, services and data flows."],["Validate","Test behavior, responsiveness and failure paths before release."]].map(([title,text],index)=><article key={title}><span>{String(index+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 

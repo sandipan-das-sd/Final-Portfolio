@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Bot, Braces, Check, Database, Github, Server, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
+import { ProjectTechnology } from "@/components/ProjectTechnology";
 
 const liveUrl = "https://ai-assisted-text-classification-api.vercel.app/";
 const apiUrl = "https://ai-assisted-text-classification-api-delta.vercel.app/api/classify";
@@ -63,7 +64,7 @@ export default function AiTextClassifierPage() {
       ["Optional persistence", "The classifier remains available when MongoDB is not configured or connected."],
     ].map(([title,text])=><article key={title}><ShieldCheck /><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
-    <section className="classifier-stack"><p className="section-label">05 / Technology</p><div>{["React","Vite","Node.js","Express","MongoDB","Mongoose","Ollama","LangChain","Vercel","Cloudflare Tunnel"].map(item=><span key={item}>{item}</span>)}</div></section>
+    <ProjectTechnology project="AI Text Classifier" technologies={["React","Vite","Node.js","Express","MongoDB","Mongoose","Ollama","LangChain","Vercel","Cloudflare Tunnel"]}/>
 
     <section className="classifier-results"><div><p className="section-label">06 / Delivered</p><h2>Built, tested and documented.</h2></div><div>{["Responsive React testing interface","Layered controller, route and service structure","Automated API and normalization tests","Postman collection and environment examples","Vercel serverless deployment configuration","Detailed local and production setup guide"].map(item=><p key={item}><Check />{item}</p>)}</div></section>
 
