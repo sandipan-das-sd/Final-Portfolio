@@ -39,9 +39,7 @@ const industries = [
 const process = [
   { title: "Discover the business problem", text: "Clarify the goal, bottlenecks and result that matters." },
   { title: "Map users, data and workflows", text: "Understand who does what, with which information and tools." },
-  { title: "Design the right solution", text: "Shape the experience, architecture and delivery priorities." },
-  { title: "Build in clear milestones", text: "Deliver working progress in focused, reviewable stages." },
-  { title: "Test with real scenarios", text: "Validate the important journeys, edge cases and integrations." },
+  { title: "Design, build and test", text: "Deliver working milestones and validate them with real scenarios." },
   { title: "Launch, train and improve", text: "Release confidently, support adoption and learn from usage." },
 ];
 const faqs = [

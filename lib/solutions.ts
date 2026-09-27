@@ -4,7 +4,7 @@ export type SolutionPage = {
   faqs: { question: string; answer: string }[];
 };
 
-const delivery = ["Understand the current workflow and bottlenecks", "Map users, data, permissions and integrations", "Prototype the most important experience", "Build and validate in clear milestones", "Launch with documentation and support"];
+const delivery = ["Understand the current workflow and bottlenecks", "Map users, data, permissions and integrations", "Design, build and validate in clear milestones", "Launch with documentation, training and support"];
 
 export const automationPages: SolutionPage[] = [
   { slug:"n8n-workflow-automation",title:"n8n Workflow Automation",eyebrow:"Business automation",description:"Connected n8n workflows that reduce repetitive work and move information reliably between your business tools.",intro:"I design maintainable automations around your real operating process—not disconnected demos—complete with validation, alerts and failure paths.",capabilities:["Lead capture and CRM routing","Email and notification workflows","Spreadsheet and database synchronization","Webhook and API orchestration","Scheduled reports and alerts","Human approval steps"],outcomes:["Less manual data entry","Faster response times","Visible and recoverable workflows"],process:delivery,technologies:["n8n","REST APIs","Webhooks","PostgreSQL","Google Sheets","Email","JavaScript"],faqs:[{question:"Can n8n connect our existing tools?",answer:"Yes, when the tools provide an API, webhook, database connection or supported integration."},{question:"What happens when an automation fails?",answer:"Critical workflows can include retries, error logging and notifications so failures are visible and recoverable."}]},
