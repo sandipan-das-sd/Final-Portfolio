@@ -19,7 +19,7 @@ export function ContactForm() {
       const body = await response.json(); if (!response.ok) throw new Error(body.error || "Unable to send your request."); setState("sent"); e.currentTarget.reset();
     } catch (caught) { setError((caught as Error).message); setState("idle"); }
   }
-  if (state === "sent") return <div className="contact-form contact-sent"><Check /><h3>Requirement received.</h3><p>It is now available in the admin enquiry panel. I&apos;ll review it and reply soon.</p><a className="email-copy" href="mailto:dsandipan3002@gmail.com?subject=Project%20enquiry"><Mail size={16} /> Open email too</a><button type="button" onClick={() => setState("idle")}>Plan another project</button></div>;
+  if (state === "sent") return <div className="contact-form contact-sent"><Check /><h3>Message sent.</h3><p>Thanks for sharing your requirements. I&apos;ll review them and reply by email soon.</p><a className="email-copy" href="mailto:dsandipan3002@gmail.com?subject=Project%20enquiry"><Mail size={16} /> Open email too</a><button type="button" onClick={() => setState("idle")}>Send another message</button></div>;
   return <form className="contact-form requirements-form" onSubmit={submit}>
     <div className="form-heading"><span>Free project consultation</span><b>Tell me what you need</b></div>
     <div className="contact-fields"><label>Your name<input name="name" required /></label><label>Work email<input name="email" type="email" required /></label><label>Company<input name="company" /></label><label>Phone / WhatsApp<input name="phone" /></label></div>

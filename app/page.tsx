@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { ProjectSlider } from "@/components/ProjectSlider";
 import { ContactForm } from "@/components/ContactForm";
@@ -38,7 +39,7 @@ const faqs = [
   ["Is the consultation really free?", "Yes. The first requirement review is free and helps clarify scope, priorities, risks and the right delivery approach."],
   ["What happens after I submit my requirement?", "I review the workflow, technical needs and priorities, then contact you with recommended next steps and a clear delivery plan."],
   ["Can you automate our existing tools with n8n?", "Yes. I can connect supported APIs, webhooks, email, databases, spreadsheets and business tools, with monitoring and failure handling."],
-  ["Can we see enquiries and requirements in an admin panel?", "Yes. Consultation requests and chatbot leads are stored in the protected portfolio admin panel, with direct email reply links."],
+  ["How will you contact me?", "After reviewing your requirement, I&apos;ll reply directly to the email address you provide."],
   ["Do you build complete enterprise ERP software?", "I build scoped custom ERP modules and operational platforms. Large programmes begin with discovery and are delivered in milestones."],
 ];
 
@@ -233,7 +234,7 @@ export default async function Home() {
       </section>
 
       <section className="contact section" id="contact">
-        <div><p className="eyebrow"><i /> Free consultation</p><h2>Have a process<br />worth improving?</h2><p className="contact-note">Tell me about your workflow, goals and timeline. Your full requirement is saved securely in my admin panel and delivered to my inbox when email delivery is connected.</p></div>
+        <div><p className="eyebrow"><i /> Free consultation</p><h2>Have a process<br />worth improving?</h2><p className="contact-note">Tell me about your workflow, goals and timeline. I&apos;ll review your requirements and reply directly by email.</p></div>
         <ContactForm />
       </section>
 
@@ -241,7 +242,7 @@ export default async function Home() {
 
       <section className="home-faq section"><div><p className="section-label">Frequently asked questions</p><h2>Before we start.</h2></div><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
-      <footer><a className="brand" href="#top"><span>SD</span> Sandipan Das</a><p>Full Stack Developer · Kolkata, West Bengal</p><div><a href="tel:+918335019404">+91 83350 19404</a><a href="mailto:dsandipan3002@gmail.com">Email</a><a href="https://github.com/sandipan-das-sd">GitHub</a></div><small>© 2026 Sandipan Das</small></footer>
+      <footer className="site-footer"><div className="footer-main"><div className="footer-pitch"><p className="eyebrow"><i /> Available for selected projects</p><h2>Let&apos;s turn your<br />idea into a system.</h2><a href="#contact">Start a conversation <ArrowUpRight /></a></div><div className="footer-links"><div><span>Explore</span><a href="#work">Selected work</a><a href="#automation">Automation</a><a href="#industries">Industries</a><Link href="/services">Services</Link></div><div><span>Connect</span><a href="mailto:dsandipan3002@gmail.com">Email</a><a href="tel:+918335019404">Phone</a><a href="https://github.com/sandipan-das-sd" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/sandipan-das-13968b1b0" target="_blank" rel="noreferrer">LinkedIn</a></div></div></div><div className="footer-bottom"><a className="brand" href="#top"><span>SD</span> Sandipan Das</a><p>Full-stack · AI · Automation · SAP</p><small>© 2026 Sandipan Das. Built with care in Kolkata.</small><a href="#top">Back to top ↑</a></div></footer>
       <LeadChatbot />
     </main>
   );
