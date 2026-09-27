@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/Header";
+import { SiteFooter } from "@/components/SiteFooter";
 import { servicePages } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function ServicesPage() {
       </Link>)}
     </section>
     <section className="service-cta"><p>Have a defined requirement or an early idea?</p><h2>Let&apos;s turn it into a clear build plan.</h2><a href="mailto:dsandipan3002@gmail.com?subject=Project%20enquiry">Discuss your project <ArrowUpRight /></a></section>
+    <SiteFooter />
     <footer><Link className="brand" href="/"><span>SD</span> Sandipan Das</Link><p>Full Stack Developer · Kolkata, West Bengal</p><div><Link href="/">Portfolio</Link><a href="mailto:dsandipan3002@gmail.com">Email</a></div><small>© 2026 Sandipan Das</small></footer>
   </main>;
 }

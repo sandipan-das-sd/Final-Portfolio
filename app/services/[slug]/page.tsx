@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { Header } from "@/components/Header";
+import { SiteFooter } from "@/components/SiteFooter";
 import { getService, servicePages } from "@/lib/services";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -40,6 +41,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <section className="service-faq"><div><p className="section-label">05 / FAQ</p><h2>Useful answers before we begin.</h2></div><div>{service.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
       <section className="service-cta"><p>Need this capability for your business?</p><h2>Tell me what needs to work.</h2><a href={`mailto:dsandipan3002@gmail.com?subject=${encodeURIComponent(service.shortTitle + " enquiry")}`}>Start a conversation <ArrowUpRight /></a></section>
     </article>
+    <SiteFooter />
     <footer><Link className="brand" href="/"><span>SD</span> Sandipan Das</Link><p>Full Stack Developer · Kolkata, West Bengal</p><div><Link href="/services">All services</Link><a href="mailto:dsandipan3002@gmail.com">Email</a></div><small>© 2026 Sandipan Das</small></footer>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
   </main>;
