@@ -1,4 +1,60 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-export function SiteFooter(){return <footer className="site-footer"><div className="footer-main"><div className="footer-pitch"><p className="eyebrow"><i /> Available for selected projects</p><h2>Let&apos;s turn your<br />idea into a system.</h2><Link href="/#contact">Start a conversation <ArrowUpRight /></Link></div><div className="footer-links"><div><span>Solutions</span><Link href="/services">Development</Link><Link href="/automation">Automation</Link><Link href="/industries">Industries</Link><Link href="/#work">Case studies</Link></div><div><span>Connect</span><a href="mailto:dsandipan3002@gmail.com">Email</a><a href="tel:+918335019404">Phone</a><a href="https://github.com/sandipan-das-sd" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/sandipan-das-13968b1b0" target="_blank" rel="noreferrer">LinkedIn</a></div></div></div><div className="footer-bottom"><Link className="brand" href="/"><span>SD</span> Sandipan Das</Link><p>Full-stack · AI · Automation · SAP</p><small>© 2026 Sandipan Das. Built with care in Kolkata.</small><Link href="/#top">Back to top ↑</Link></div></footer>}
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="footer-main">
+        <div className="footer-pitch">
+          <p className="eyebrow">
+            <i /> Available for selected projects
+          </p>
+          <h2>
+            Let&apos;s turn your
+            <br />
+            idea into a system.
+          </h2>
+          <Link href="/#contact">
+            Start a conversation <ArrowUpRight />
+          </Link>
+        </div>
+        <div className="footer-links">
+          <div>
+            <span>Solutions</span>
+            <Link href="/services">Development</Link>
+            <Link href="/automation">Automation</Link>
+            <Link href="/industries">Industries</Link>
+            <Link href="/#work">Case studies</Link>
+          </div>
+          <div>
+            <span>Connect</span>
+            <a href="mailto:dsandipan3002@gmail.com">Email</a>
+            <a href="tel:+918335019404">Phone</a>
+            <a
+              href="https://github.com/sandipan-das-sd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/sandipan-das-13968b1b0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <Link className="brand" href="/">
+          <span>SD</span> Sandipan Das
+        </Link>
+        <p>Full-stack · AI · Automation · SAP</p>
+        <small>© 2026 Sandipan Das. Built with care in Kolkata.</small>
+        <Link href="/#top">Back to top ↑</Link>
+      </div>
+    </footer>
+  );
+}

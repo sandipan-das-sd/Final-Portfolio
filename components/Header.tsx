@@ -6,7 +6,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  ["Work", "/#work"], ["Automation", "/automation"], ["Industries", "/industries"], ["Services", "/services"], ["Résumé", "/#resume"],
+  ["Work", "/#work"],
+  ["Automation", "/automation"],
+  ["Industries", "/industries"],
+  ["Services", "/services"],
+  ["Résumé", "/#resume"],
 ];
 
 export function Header() {
@@ -23,13 +27,20 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const close = () => setOpen(false);
-  const navigate = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const navigate = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     setOpen(false);
     if (pathname !== "/" || !href.startsWith("/#")) return;
     const id = href.slice(2);
@@ -37,16 +48,53 @@ export function Header() {
     if (!target) return;
     event.preventDefault();
     window.history.pushState(null, "", `#${id}`);
-    window.requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "start" }));
+    window.requestAnimationFrame(() =>
+      target.scrollIntoView({ behavior: "smooth", block: "start" }),
+    );
   };
   return (
-    <header className={`nav-wrap${scrolled ? " scrolled" : ""}${open ? " menu-open" : ""}`}>
-      <Link className="brand" href="/#top" onClick={event => navigate(event, "/#top")}><span>SD</span> Sandipan Das</Link>
+    <header
+      className={`nav-wrap${scrolled ? " scrolled" : ""}${open ? " menu-open" : ""}`}
+    >
+      <Link
+        className="brand"
+        href="/#top"
+        onClick={(event) => navigate(event, "/#top")}
+      >
+        <span>SD</span> Sandipan Das
+      </Link>
       <nav className={open ? "open" : ""} aria-label="Primary navigation">
-        {links.map(([label, href]) => <Link className={pathname === href || (href !== "/#work" && pathname.startsWith(href)) ? "active" : ""} href={href} onClick={event => navigate(event, href)} key={href}>{label}</Link>)}
-        <Link className="nav-cta" href="/#contact" onClick={event => navigate(event, "/#contact")}>Free consultation <ArrowUpRight size={15} /></Link>
+        {links.map(([label, href]) => (
+          <Link
+            className={
+              pathname === href ||
+              (href !== "/#work" && pathname.startsWith(href))
+                ? "active"
+                : ""
+            }
+            href={href}
+            onClick={(event) => navigate(event, href)}
+            key={href}
+          >
+            {label}
+          </Link>
+        ))}
+        <Link
+          className="nav-cta"
+          href="/#contact"
+          onClick={(event) => navigate(event, "/#contact")}
+        >
+          Free consultation <ArrowUpRight size={15} />
+        </Link>
       </nav>
-      <button className="mobile-menu" onClick={() => setOpen(value => !value)} aria-label="Toggle navigation" aria-expanded={open}>{open ? <X /> : <Menu />}</button>
+      <button
+        className="mobile-menu"
+        onClick={() => setOpen((value) => !value)}
+        aria-label="Toggle navigation"
+        aria-expanded={open}
+      >
+        {open ? <X /> : <Menu />}
+      </button>
     </header>
   );
 }
