@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { LeadChatbot } from "@/components/LeadChatbot";
 import { MotionLayer } from "@/components/MotionLayer";
 import { getResumeUrl, listProjects } from "@/lib/portfolio";
+import { automationPages, industryPages } from "@/lib/solutions";
 import {
   ArrowDown, ArrowUpRight, Award, Bot, Braces, BrainCircuit, BriefcaseBusiness, Check, Database, MessageSquare, Search, Sparkles,
   CloudCog, Code2, Download, Github, GraduationCap, Layers3, Linkedin, Mail, Package,
@@ -133,12 +134,12 @@ export default async function Home() {
 
       <section className="automation section" id="automation">
         <div className="section-head"><div><p className="section-label">03 / Business automation</p><h2>Less manual work.<br />Better operations.</h2></div><p>From n8n automations to custom ERP platforms, I design connected systems around the way your business actually works.</p></div>
-        <div className="automation-grid">{automationServices.map(item => <article key={item.title}><item.icon /><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+        <div className="automation-grid">{automationServices.map((item,index) => <Link href={`/automation/${automationPages[index].slug}`} key={item.title}><item.icon /><h3>{item.title}</h3><p>{item.text}</p><span>Explore <ArrowUpRight/></span></Link>)}</div>
       </section>
 
       <section className="industries section" id="industries">
         <div className="industry-intro"><p className="section-label">Industry-specific solutions</p><h2>Smart technology for solving industry problems.</h2><p>Software is most useful when it understands the workflow behind the screen. Each engagement starts with your users, operational constraints and measurable outcome.</p><a className="button lime" href="#contact">Book a free consultation <ArrowUpRight size={17} /></a></div>
-        <div className="industry-grid">{industries.map(item => <article key={item.name}><item.icon /><span><b>{item.name}</b><small>{item.detail}</small></span><ArrowUpRight /></article>)}</div>
+        <div className="industry-grid">{industries.map((item,index) => <Link href={`/industries/${industryPages[index].slug}`} key={item.name}><item.icon /><span><b>{item.name}</b><small>{item.detail}</small></span><ArrowUpRight /></Link>)}</div>
       </section>
 
       <section className="work section" id="work">

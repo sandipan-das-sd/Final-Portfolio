@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
-  ["Work", "/#work"], ["Automation", "/#automation"], ["Industries", "/#industries"], ["Services", "/services"], ["Résumé", "/#resume"],
+  ["Work", "/#work"], ["Automation", "/automation"], ["Industries", "/industries"], ["Services", "/services"], ["Résumé", "/#resume"],
 ];
 
 export function Header() {
