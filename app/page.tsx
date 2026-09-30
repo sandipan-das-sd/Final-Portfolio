@@ -917,36 +917,60 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="journey section" id="experience">
-        <p className="section-label">06 / Experience</p>
-        <div className="timeline experience-timeline">
-          <article>
-            <span>Jan 2024 — Jul 2026</span>
-            <BriefcaseBusiness />
-            <div>
-              <h3>Freelance &amp; Independent Software Developer</h3>
-              <p className="experience-source">
-                Fiverr · Upwork · Local clients · Remote
-              </p>
-              <p>
-                Built and shipped web, mobile and backend solutions from initial
-                requirements through development, testing and deployment. Worked
-                directly with project stakeholders, translated business needs
-                into practical features and improved products through feedback.
-              </p>
-              <div className="experience-points">
-                <span>Full-stack web applications</span>
-                <span>React Native mobile products</span>
-                <span>REST APIs &amp; database design</span>
-                <span>Deployment &amp; ongoing support</span>
-              </div>
-              <b>
-                Currently open to full-time fresher roles · Remote, hybrid or
-                on-site · Flexible across India and worldwide
-              </b>
-            </div>
-          </article>
+      <section className="experience-section section" id="experience">
+        <div className="experience-heading">
+          <p className="section-label">06 / Experience</p>
+          <h2>
+            Real projects.
+            <br />Real ownership.
+          </h2>
+          <p>
+            Independent delivery experience built around practical products,
+            clear communication and reliable execution.
+          </p>
         </div>
+        <article className="experience-card">
+          <div className="experience-card-top">
+            <span className="experience-date">Jan 2024 — Jul 2026</span>
+            <span className="experience-status"><i /> Freelance experience</span>
+          </div>
+          <div className="experience-title">
+            <span className="experience-icon"><BriefcaseBusiness /></span>
+            <div>
+              <p>Full-stack development</p>
+              <h3>Freelance &amp; Independent Software Developer</h3>
+            </div>
+          </div>
+          <div className="experience-platforms" aria-label="Work sources">
+            <span>Fiverr</span>
+            <span>Upwork</span>
+            <span>Local clients</span>
+            <span>Remote collaboration</span>
+          </div>
+          <div className="experience-body">
+            <p>
+              Built and shipped web, mobile and backend solutions from initial
+              requirements through development, testing and deployment. Worked
+              directly with stakeholders, translated business needs into useful
+              features and improved products through feedback.
+            </p>
+            <div className="experience-points">
+              <span><Check /> Full-stack web applications</span>
+              <span><Check /> React Native mobile products</span>
+              <span><Check /> REST APIs &amp; database design</span>
+              <span><Check /> Deployment &amp; ongoing support</span>
+            </div>
+          </div>
+          <div className="experience-availability">
+            <span><i /> Available now</span>
+            <p>
+              Open to full-time fresher roles across India and worldwide
+            </p>
+            <div>
+              <b>Remote</b><b>Hybrid</b><b>On-site</b>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section className="journey section" id="education">

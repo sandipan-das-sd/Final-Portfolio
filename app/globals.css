@@ -936,25 +936,197 @@ h1 em {
 .timeline b {
   font-size: 0.76rem;
 }
-.experience-source {
-  color: var(--acid) !important;
-  font-size: 0.78rem;
+.experience-section {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 2fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4.5rem);
+}
+.experience-heading h2 {
+  font: 500 clamp(2rem, 3.2vw, 3.6rem)/0.98 "Manrope";
+  letter-spacing: -0.055em;
+  margin: 1.4rem 0 1rem;
+}
+.experience-heading > p:last-child {
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 330px;
+}
+.experience-card {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(190, 255, 29, 0.2), transparent 27%),
+    var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  color: #fff;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3.2vw, 3rem);
+  position: relative;
+  box-shadow: 0 28px 70px rgba(9, 20, 14, 0.18);
+}
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--acid);
+}
+.experience-card-top,
+.experience-title,
+.experience-body,
+.experience-availability {
+  position: relative;
+  z-index: 1;
+}
+.experience-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+.experience-date,
+.experience-status {
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.experience-points {
+.experience-date { color: rgba(255, 255, 255, 0.52); }
+.experience-status {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--acid);
+}
+.experience-status i,
+.experience-availability > span i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--acid);
+  box-shadow: 0 0 0 5px rgba(190, 255, 29, 0.13);
+}
+.experience-title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.experience-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex: none;
+  border-radius: 17px;
+  background: var(--acid);
+  color: var(--ink);
+  transform: rotate(-4deg);
+}
+.experience-icon svg { width: 25px; }
+.experience-title p {
+  color: var(--acid);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.55rem;
+  text-transform: uppercase;
+}
+.experience-title h3 {
+  font: 500 clamp(1.65rem, 3vw, 3rem)/1.08 "Manrope";
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+.experience-platforms {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
-  margin: 1rem 0 1.2rem;
+  margin: 1.8rem 0 2rem 4.9rem;
 }
+.experience-platforms span {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.69rem;
+  padding: 0.5rem 0.8rem;
+}
+.experience-body {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.8rem;
+}
+.experience-body > p {
+  color: rgba(255, 255, 255, 0.64);
+  line-height: 1.7;
+  margin: 0;
+}
+.experience-points { display: grid; gap: 0.75rem; }
 .experience-points span {
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.78rem;
+}
+.experience-points svg {
+  width: 17px;
+  height: 17px;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--acid);
+  color: var(--ink);
+  stroke-width: 3;
+}
+.experience-availability {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  padding: 1rem 1.1rem;
+  border-radius: 15px;
+  background: rgba(190, 255, 29, 0.1);
+  border: 1px solid rgba(190, 255, 29, 0.24);
+}
+.experience-availability > span {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--acid);
   font-size: 0.72rem;
-  padding: 0.48rem 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.experience-availability p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.76rem;
+  margin: 0;
+}
+.experience-availability > div { display: flex; gap: 0.35rem; }
+.experience-availability b {
+  background: var(--acid);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.62rem;
+  padding: 0.42rem 0.62rem;
+}
+#education { padding-top: clamp(2.5rem, 4vw, 4.5rem); }
+@media (max-width: 850px) {
+  .experience-section { grid-template-columns: 1fr; gap: 2rem; }
+  .experience-heading > p:last-child { max-width: 600px; }
+  .experience-availability { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .experience-card { border-radius: 20px; padding: 1.35rem; }
+  .experience-card-top { align-items: flex-start; flex-direction: column; margin-bottom: 2rem; }
+  .experience-title { align-items: flex-start; }
+  .experience-icon { width: 46px; height: 46px; border-radius: 13px; }
+  .experience-title h3 { font-size: 1.5rem; }
+  .experience-platforms { margin: 1.5rem 0; }
+  .experience-body { grid-template-columns: 1fr; }
+  .experience-availability > div { flex-wrap: wrap; }
 }
 .certs {
   display: flex;
