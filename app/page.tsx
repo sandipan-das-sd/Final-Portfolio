@@ -322,10 +322,10 @@ export default async function Home() {
             Backend-strong.
           </h2>
           <p>
-            I&apos;m a computer science graduate focused on full-stack
-            engineering, scalable backend systems and SAP ABAP. I enjoy owning a
-            product from its data model and API to the final interface people
-            use.
+            I&apos;m a computer science graduate with hands-on freelance and
+            independent project experience across full-stack engineering,
+            scalable backend systems and SAP ABAP. I enjoy owning a product from
+            its data model and API to the final interface people use.
           </p>
           <div className="socials">
             <a
@@ -917,8 +917,37 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="journey section" id="experience">
+        <p className="section-label">06 / Experience</p>
+        <div className="timeline experience-timeline">
+          <article>
+            <span>2023 — Present</span>
+            <BriefcaseBusiness />
+            <div>
+              <h3>Freelance &amp; Independent Software Developer</h3>
+              <p className="experience-source">
+                Fiverr · Upwork · Local clients · Remote
+              </p>
+              <p>
+                Built and shipped web, mobile and backend solutions from initial
+                requirements through development, testing and deployment. Worked
+                directly with project stakeholders, translated business needs
+                into practical features and improved products through feedback.
+              </p>
+              <div className="experience-points">
+                <span>Full-stack web applications</span>
+                <span>React Native mobile products</span>
+                <span>REST APIs &amp; database design</span>
+                <span>Deployment &amp; ongoing support</span>
+              </div>
+              <b>Project-based experience · Open to fresher roles</b>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section className="journey section" id="education">
-        <p className="section-label">06 / Education</p>
+        <p className="section-label">07 / Education</p>
         <div className="timeline">
           <article>
             <span>2022 — 2026</span>

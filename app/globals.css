@@ -936,6 +936,26 @@ h1 em {
 .timeline b {
   font-size: 0.76rem;
 }
+.experience-source {
+  color: var(--acid) !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.experience-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0 1.2rem;
+}
+.experience-points span {
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  padding: 0.48rem 0.75rem;
+}
 .certs {
   display: flex;
   gap: 0.5rem;
