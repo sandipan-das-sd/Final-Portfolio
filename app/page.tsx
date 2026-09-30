@@ -370,7 +370,7 @@ export default async function Home() {
             <i />
             <span>
               <b>Open to opportunities</b>
-              <small>Full Stack · SAP ABAP</small>
+              <small>Remote · Hybrid · On-site · Worldwide</small>
             </span>
           </figcaption>
         </figure>
@@ -921,7 +921,7 @@ export default async function Home() {
         <p className="section-label">06 / Experience</p>
         <div className="timeline experience-timeline">
           <article>
-            <span>2023 — Present</span>
+            <span>Jan 2024 — Jul 2026</span>
             <BriefcaseBusiness />
             <div>
               <h3>Freelance &amp; Independent Software Developer</h3>
@@ -940,7 +940,10 @@ export default async function Home() {
                 <span>REST APIs &amp; database design</span>
                 <span>Deployment &amp; ongoing support</span>
               </div>
-              <b>Project-based experience · Open to fresher roles</b>
+              <b>
+                Currently open to full-time fresher roles · Remote, hybrid or
+                on-site · Flexible across India and worldwide
+              </b>
             </div>
           </article>
         </div>
