@@ -33,11 +33,6 @@ export function Header() {
     };
   }, [open]);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  const close = () => setOpen(false);
   const navigate = (
     event: React.MouseEvent<HTMLAnchorElement>,
     href: string,
