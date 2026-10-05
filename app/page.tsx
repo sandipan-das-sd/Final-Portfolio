@@ -922,55 +922,125 @@ export default async function Home() {
           <p className="section-label">06 / Experience</p>
           <h2>
             Real projects.
-            <br />Real ownership.
+            <br />
+            Real ownership.
           </h2>
           <p>
-            Independent delivery experience built around practical products,
-            clear communication and reliable execution.
+            Professional and independent delivery experience built around
+            practical products, clear communication and reliable execution.
           </p>
         </div>
-        <article className="experience-card">
-          <div className="experience-card-top">
-            <span className="experience-date">Jan 2024 — Jul 2026</span>
-            <span className="experience-status"><i /> Freelance experience</span>
-          </div>
-          <div className="experience-title">
-            <span className="experience-icon"><BriefcaseBusiness /></span>
-            <div>
-              <p>Full-stack development</p>
-              <h3>Freelance &amp; Independent Software Developer</h3>
+        <div className="experience-list">
+          <article className="experience-card">
+            <div className="experience-card-top">
+              <span className="experience-date">Jan 2026 — Jun 2026</span>
+              <span className="experience-status">
+                <i /> Internship
+              </span>
             </div>
-          </div>
-          <div className="experience-platforms" aria-label="Work sources">
-            <span>Fiverr</span>
-            <span>Upwork</span>
-            <span>Local clients</span>
-            <span>Remote collaboration</span>
-          </div>
-          <div className="experience-body">
-            <p>
-              Built and shipped web, mobile and backend solutions from initial
-              requirements through development, testing and deployment. Worked
-              directly with stakeholders, translated business needs into useful
-              features and improved products through feedback.
-            </p>
-            <div className="experience-points">
-              <span><Check /> Full-stack web applications</span>
-              <span><Check /> React Native mobile products</span>
-              <span><Check /> REST APIs &amp; database design</span>
-              <span><Check /> Deployment &amp; ongoing support</span>
+            <div className="experience-title">
+              <span className="experience-icon">
+                <ServerCog />
+              </span>
+              <div>
+                <p>StudyBloom 24 LLP · Remote</p>
+                <h3>Backend Developer Intern</h3>
+              </div>
             </div>
-          </div>
-          <div className="experience-availability">
-            <span><i /> Available now</span>
-            <p>
-              Open to full-time fresher roles across India and worldwide
-            </p>
-            <div>
-              <b>Remote</b><b>Hybrid</b><b>On-site</b>
+            <div
+              className="experience-platforms"
+              aria-label="Technologies used"
+            >
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MongoDB</span>
+              <span>AWS</span>
+              <span>Nginx</span>
+              <span>PM2</span>
             </div>
-          </div>
-        </article>
+            <div className="experience-body">
+              <p>
+                Developed and maintained backend services for Gyanoda, an
+                educational platform for WBJEE and NEET preparation, supporting
+                reliable experiences across its web and mobile applications.
+              </p>
+              <div className="experience-points">
+                <span>
+                  <Check /> Built REST APIs with Node.js and Express.js
+                </span>
+                <span>
+                  <Check /> Implemented authentication and authorization
+                </span>
+                <span>
+                  <Check /> Managed application data in MongoDB
+                </span>
+                <span>
+                  <Check /> Integrated APIs and resolved technical issues
+                </span>
+                <span>
+                  <Check /> Supported AWS deployment with Nginx and PM2
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article className="experience-card">
+            <div className="experience-card-top">
+              <span className="experience-date">Jan 2024 — Jul 2026</span>
+              <span className="experience-status">
+                <i /> Freelance experience
+              </span>
+            </div>
+            <div className="experience-title">
+              <span className="experience-icon">
+                <BriefcaseBusiness />
+              </span>
+              <div>
+                <p>Full-stack development</p>
+                <h3>Freelance &amp; Independent Software Developer</h3>
+              </div>
+            </div>
+            <div className="experience-platforms" aria-label="Work sources">
+              <span>Fiverr</span>
+              <span>Upwork</span>
+              <span>Local clients</span>
+              <span>Remote collaboration</span>
+            </div>
+            <div className="experience-body">
+              <p>
+                Built and shipped web, mobile and backend solutions from initial
+                requirements through development, testing and deployment. Worked
+                directly with stakeholders, translated business needs into
+                useful features and improved products through feedback.
+              </p>
+              <div className="experience-points">
+                <span>
+                  <Check /> Full-stack web applications
+                </span>
+                <span>
+                  <Check /> React Native mobile products
+                </span>
+                <span>
+                  <Check /> REST APIs &amp; database design
+                </span>
+                <span>
+                  <Check /> Deployment &amp; ongoing support
+                </span>
+              </div>
+            </div>
+            <div className="experience-availability">
+              <span>
+                <i /> Available now
+              </span>
+              <p>Open to full-time fresher roles across India and worldwide</p>
+              <div>
+                <b>Remote</b>
+                <b>Hybrid</b>
+                <b>On-site</b>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section className="journey section" id="education">
