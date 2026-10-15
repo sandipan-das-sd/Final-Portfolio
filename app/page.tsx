@@ -369,8 +369,8 @@ export default async function Home() {
           <figcaption>
             <i />
             <span>
-              <b>Open to opportunities</b>
-              <small>Remote · Hybrid · On-site · Worldwide</small>
+              <b>Full Stack Developer Executive</b>
+              <small>Academy of Vedic Vidya</small>
             </span>
           </figcaption>
         </figure>
@@ -931,6 +931,60 @@ export default async function Home() {
           </p>
         </div>
         <div className="experience-list">
+          <article className="experience-card experience-card-current">
+            <div className="experience-card-top">
+              <span className="experience-date">Oct 2026 — Present</span>
+              <span className="experience-status">
+                <i /> Current role
+              </span>
+            </div>
+            <div className="experience-title">
+              <a
+                className="experience-company-logo"
+                href="https://www.academyofvedicvidya.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Visit Academy of Vedic Vidya"
+              >
+                <img
+                  src="https://www.academyofvedicvidya.com/wp-content/uploads/2025/02/cropped-cropped-AVV-Logo_enhanced-600x153.png"
+                  alt="Academy of Vedic Vidya logo"
+                />
+              </a>
+              <div>
+                <p>Academy of Vedic Vidya · Kolkata, India</p>
+                <h3>Full Stack Developer Executive</h3>
+              </div>
+            </div>
+            <div className="experience-platforms" aria-label="Role focus">
+              <span>Full-stack development</span>
+              <span>Web applications</span>
+              <span>Backend systems</span>
+              <span>Production support</span>
+            </div>
+            <div className="experience-body">
+              <p>
+                Building and maintaining reliable digital products for the
+                Academy of Vedic Vidya, contributing across frontend, backend,
+                APIs, databases and production delivery.
+              </p>
+              <div className="experience-points">
+                <span>
+                  <Check /> Develop end-to-end product features
+                </span>
+                <span>
+                  <Check /> Build and integrate backend APIs
+                </span>
+                <span>
+                  <Check /> Maintain application data and workflows
+                </span>
+                <span>
+                  <Check /> Support testing, deployment and reliability
+                </span>
+              </div>
+            </div>
+          </article>
+
           <article className="experience-card">
             <div className="experience-card-top">
               <span className="experience-date">Jan 2026 — Jun 2026</span>
@@ -1026,17 +1080,6 @@ export default async function Home() {
                 <span>
                   <Check /> Deployment &amp; ongoing support
                 </span>
-              </div>
-            </div>
-            <div className="experience-availability">
-              <span>
-                <i /> Available now
-              </span>
-              <p>Open to full-time fresher roles across India and worldwide</p>
-              <div>
-                <b>Remote</b>
-                <b>Hybrid</b>
-                <b>On-site</b>
               </div>
             </div>
           </article>
@@ -1218,7 +1261,7 @@ export default async function Home() {
         <div className="footer-main">
           <div className="footer-pitch">
             <p className="eyebrow">
-              <i /> Available for selected projects
+              <i /> Currently building at Academy of Vedic Vidya
             </p>
             <h2>
               Let&apos;s turn your

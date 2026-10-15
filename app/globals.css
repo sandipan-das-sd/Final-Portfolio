@@ -1032,6 +1032,28 @@ h1 em {
 .experience-icon svg {
   width: 25px;
 }
+.experience-company-logo {
+  align-items: center;
+  background: #fff;
+  border-radius: 17px;
+  display: flex;
+  flex: none;
+  height: 66px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.65rem 0.8rem;
+  width: 150px;
+}
+.experience-company-logo img {
+  display: block;
+  height: auto;
+  max-height: 46px;
+  object-fit: contain;
+  width: 100%;
+}
+.experience-card-current {
+  border-color: rgba(190, 255, 29, 0.38);
+}
 .experience-title p {
   color: var(--acid);
   font-size: 0.68rem;
@@ -1158,6 +1180,10 @@ h1 em {
     width: 46px;
     height: 46px;
     border-radius: 13px;
+  }
+  .experience-company-logo {
+    height: 54px;
+    width: 120px;
   }
   .experience-title h3 {
     font-size: 1.5rem;
