@@ -1034,21 +1034,19 @@ h1 em {
 }
 .experience-company-logo {
   align-items: center;
-  background: #fff;
-  border-radius: 17px;
   display: flex;
   flex: none;
-  height: 66px;
+  height: 72px;
   justify-content: center;
   overflow: hidden;
-  padding: 0.65rem 0.8rem;
-  width: 150px;
+  width: 190px;
 }
 .experience-company-logo img {
   display: block;
   height: auto;
-  max-height: 46px;
+  max-height: 64px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.28));
   width: 100%;
 }
 .experience-card-current {
@@ -1182,8 +1180,9 @@ h1 em {
     border-radius: 13px;
   }
   .experience-company-logo {
-    height: 54px;
-    width: 120px;
+    height: 58px;
+    justify-content: flex-start;
+    width: 150px;
   }
   .experience-title h3 {
     font-size: 1.5rem;
