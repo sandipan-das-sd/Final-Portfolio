@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="footer-main">
         <div className="footer-pitch">
           <p className="eyebrow">
-            <i /> Currently building at Academy of Vedic Vidya
+            <i /> Open to full-time remote &amp; hybrid opportunities
           </p>
           <h2>
             Let&apos;s turn your

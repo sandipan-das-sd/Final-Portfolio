@@ -369,8 +369,8 @@ export default async function Home() {
           <figcaption>
             <i />
             <span>
-              <b>Full Stack Developer Executive</b>
-              <small>Academy of Vedic Vidya</small>
+              <b>Open to work</b>
+              <small>Remote &amp; hybrid opportunities</small>
             </span>
           </figcaption>
         </figure>
@@ -933,53 +933,44 @@ export default async function Home() {
         <div className="experience-list">
           <article className="experience-card experience-card-current">
             <div className="experience-card-top">
-              <span className="experience-date">Oct 2026 — Present</span>
+              <span className="experience-date">Available now</span>
               <span className="experience-status">
-                <i /> Current role
+                <i /> Open to work
               </span>
             </div>
             <div className="experience-title">
-              <a
-                className="experience-company-logo"
-                href="https://www.academyofvedicvidya.com/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Visit Academy of Vedic Vidya"
-              >
-                <img
-                  src="https://www.academyofvedicvidya.com/wp-content/uploads/2025/02/cropped-cropped-AVV-Logo_enhanced-600x153.png"
-                  alt="Academy of Vedic Vidya logo"
-                />
-              </a>
+              <span className="experience-icon">
+                <BriefcaseBusiness />
+              </span>
               <div>
-                <p>Academy of Vedic Vidya · Kolkata, India</p>
-                <h3>Full Stack Developer Executive</h3>
+                <p>Kolkata, India · Remote or hybrid</p>
+                <h3>Full Stack &amp; Backend Developer</h3>
               </div>
             </div>
-            <div className="experience-platforms" aria-label="Role focus">
-              <span>Full-stack development</span>
-              <span>Web applications</span>
-              <span>Backend systems</span>
-              <span>Production support</span>
+            <div className="experience-platforms" aria-label="Work preferences">
+              <span>Full-time roles</span>
+              <span>Remote</span>
+              <span>Hybrid</span>
+              <span>Open to relocate</span>
             </div>
             <div className="experience-body">
               <p>
-                Building and maintaining reliable digital products for the
-                Academy of Vedic Vidya, contributing across frontend, backend,
-                APIs, databases and production delivery.
+                Open to full-time opportunities where I can build dependable
+                products across frontend, backend, APIs, databases and cloud
+                deployment while growing with a collaborative engineering team.
               </p>
               <div className="experience-points">
                 <span>
-                  <Check /> Develop end-to-end product features
+                  <Check /> Full-stack and backend engineering roles
                 </span>
                 <span>
-                  <Check /> Build and integrate backend APIs
+                  <Check /> Remote and hybrid opportunities
                 </span>
                 <span>
-                  <Check /> Maintain application data and workflows
+                  <Check /> Product teams and client-facing development
                 </span>
                 <span>
-                  <Check /> Support testing, deployment and reliability
+                  <Check /> Available to interview and join
                 </span>
               </div>
             </div>
@@ -1261,7 +1252,7 @@ export default async function Home() {
         <div className="footer-main">
           <div className="footer-pitch">
             <p className="eyebrow">
-              <i /> Currently building at Academy of Vedic Vidya
+              <i /> Open to full-time remote &amp; hybrid opportunities
             </p>
             <h2>
               Let&apos;s turn your
