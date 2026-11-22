@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { servicePages } from "@/lib/services";
-import { defaultProjects } from "@/lib/portfolio";
+import { defaultProjects, defaultStudyNotes } from "@/lib/portfolio";
 import { projectSlug } from "@/lib/projectCaseStudies";
 import { automationPages, industryPages } from "@/lib/solutions";
 
@@ -50,6 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...defaultProjects.map((project) => ({
       url: `https://www.sandipandas.website/projects/${projectSlug(project.title)}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+    ...defaultStudyNotes.map((note) => ({
+      url: `https://www.sandipandas.website/study-notes/${note.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.85,

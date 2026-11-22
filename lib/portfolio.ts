@@ -439,6 +439,11 @@ export async function listStudyNotes(includeDrafts = false) {
   }
 }
 
+export async function getStudyNoteBySlug(slug: string, includeDrafts = false) {
+  const notes = await listStudyNotes(includeDrafts);
+  return notes.find((note) => note.slug === slug) ?? null;
+}
+
 export async function createStudyNote(note: StudyNoteInput) {
   const sql = client();
   if (!sql) throw new Error("Database is not configured.");

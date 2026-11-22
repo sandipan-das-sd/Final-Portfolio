@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Download, FileText, Instagram, Search, Sparkles } from "lucide-react";
+import { ArrowUpRight, FileText, Instagram, Search, Sparkles } from "lucide-react";
+import Link from "next/link";
 import type { StudyNote } from "@/lib/portfolio";
 
 export function StudyNotesLibrary({ notes }: { notes: StudyNote[] }) {
@@ -35,7 +36,7 @@ export function StudyNotesLibrary({ notes }: { notes: StudyNote[] }) {
               <h2>{note.title}</h2>
               <p>{note.description}</p>
               <div className="note-actions">
-                <a className="note-download" href={note.pdfUrl} target="_blank" rel="noreferrer"><Download size={17} /> Open PDF</a>
+                <Link className="note-download" href={`/study-notes/${note.slug}`}><ArrowUpRight size={17} /> Read guide</Link>
                 {note.instagramUrl && <a className="note-instagram" href={note.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Watch the ${note.title} reel on Instagram`}><Instagram size={18} /></a>}
               </div>
             </div>
