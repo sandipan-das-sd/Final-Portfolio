@@ -13,23 +13,24 @@ export async function POST(request: Request) {
     kind = String(data.get("kind") ?? "thumbnail");
   if (!(file instanceof File))
     return NextResponse.json({ error: "Choose a file." }, { status: 400 });
+  const isPdf = kind === "resume" || kind === "study-note";
   const allowed =
-    kind === "resume"
+    isPdf
       ? ["application/pdf"]
       : ["image/jpeg", "image/png", "image/webp", "image/gif"];
   if (!allowed.includes(file.type))
     return NextResponse.json(
       {
         error:
-          kind === "resume"
-            ? "Résumé must be a PDF."
+          isPdf
+            ? "The selected document must be a PDF."
             : "Thumbnail must be JPG, PNG, WebP or GIF.",
       },
       { status: 400 },
     );
-  if (file.size > 8 * 1024 * 1024)
+  if (file.size > 15 * 1024 * 1024)
     return NextResponse.json(
-      { error: "File must be under 8 MB." },
+      { error: "File must be under 15 MB." },
       { status: 400 },
     );
   const blob = await put(`sandipan-portfolio/${kind}/${file.name}`, file, {

@@ -25,6 +25,7 @@ export function SiteFooter() {
             <Link href="/automation">Automation</Link>
             <Link href="/industries">Industries</Link>
             <Link href="/#work">Case studies</Link>
+            <Link href="/study-notes">Study notes</Link>
           </div>
           <div>
             <span>Connect</span>
@@ -44,6 +45,7 @@ export function SiteFooter() {
             >
               LinkedIn
             </a>
+            <a href="https://www.instagram.com/dev.sandipan/" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </div>
       </div>

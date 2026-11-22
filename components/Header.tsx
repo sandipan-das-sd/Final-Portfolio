@@ -11,6 +11,7 @@ const links = [
   ["Automation", "/automation"],
   ["Industries", "/industries"],
   ["Services", "/services"],
+  ["Study Notes", "/study-notes"],
   ["Résumé", "/#resume"],
 ];
 

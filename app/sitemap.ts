@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: "https://www.sandipandas.website/study-notes",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...["automation", "industries"].map((path) => ({
       url: `https://www.sandipandas.website/${path}`,
       lastModified: new Date(),

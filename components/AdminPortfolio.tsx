@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import type { PortfolioMessage, PortfolioProject } from "@/lib/portfolio";
+import type { StudyNote } from "@/lib/portfolio";
+import { AdminStudyNotes } from "@/components/AdminStudyNotes";
 
 const empty = {
   id: 0,
@@ -18,11 +20,13 @@ export function AdminPortfolio({
   initialProjects,
   initialResume,
   initialMessages,
+  initialNotes,
 }: {
   configured: boolean;
   initialProjects: PortfolioProject[];
   initialResume: string;
   initialMessages: PortfolioMessage[];
+  initialNotes: StudyNote[];
 }) {
   const [projects, setProjects] = useState(initialProjects),
     [messages, setMessages] = useState(initialMessages),
@@ -268,6 +272,7 @@ export function AdminPortfolio({
           ))}
         </div>
       </section>
+      <AdminStudyNotes configured={configured} initialNotes={initialNotes} />
       <section className="admin-messages">
         <h2>
           Contact messages <span>{messages.length}</span>

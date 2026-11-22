@@ -14,6 +14,57 @@ export type PortfolioProject = {
 
 export type ProjectInput = Omit<PortfolioProject, "id">;
 
+export type StudyNote = {
+  id: number;
+  title: string;
+  slug: string;
+  category: string;
+  description: string;
+  pdfUrl: string;
+  pages: number;
+  level: string;
+  accent: string;
+  instagramUrl: string;
+  position: number;
+  published: boolean;
+  createdAt: string;
+};
+
+export type StudyNoteInput = Omit<StudyNote, "id" | "createdAt">;
+
+export const defaultStudyNotes: StudyNote[] = [
+  {
+    id: -1,
+    title: "Advanced JavaScript Interview Guide",
+    slug: "advanced-javascript-interview-guide",
+    category: "JavaScript",
+    description: "A practical 2026 interview guide with concept notes, frequently asked questions, coding problems and output puzzles for confident JavaScript preparation.",
+    pdfUrl: "https://2o3mjnuymwzjdt9b.public.blob.vercel-storage.com/sandipan-portfolio/study-note/advanced-javascript-interview-guide.pdf",
+    pages: 20,
+    level: "Interview prep",
+    accent: "#c9ff36",
+    instagramUrl: "https://www.instagram.com/dev.sandipan/",
+    position: 0,
+    published: true,
+    createdAt: "2026-11-22T00:00:00.000Z",
+  },
+  {
+    id: -2,
+    title: "Advanced SQL Queries Interview Guide",
+    slug: "advanced-sql-queries-interview-guide",
+    category: "SQL",
+    description: "A focused SQL interview guide covering core concepts, real query problems and frequently asked questions with tested examples.",
+    pdfUrl: "https://2o3mjnuymwzjdt9b.public.blob.vercel-storage.com/sandipan-portfolio/study-note/advanced-sql-queries-interview-guide.pdf",
+    pages: 26,
+    level: "Interview prep",
+    accent: "#7dd3fc",
+    instagramUrl: "https://www.instagram.com/dev.sandipan/",
+    position: 1,
+    published: true,
+    createdAt: "2026-11-22T00:00:00.000Z",
+  },
+];
+
 export const defaultProjects: PortfolioProject[] = [
   [
     "Aaranya",
@@ -202,6 +253,11 @@ function ensureTables(sql: NonNullable<ReturnType<typeof client>>) {
       await sql`CREATE TABLE IF NOT EXISTS portfolio_projects (id SERIAL PRIMARY KEY, title TEXT NOT NULL, type TEXT NOT NULL, tech JSONB NOT NULL DEFAULT '[]', description TEXT NOT NULL, href TEXT NOT NULL DEFAULT '', image TEXT NOT NULL, position INTEGER NOT NULL DEFAULT 0, published BOOLEAN NOT NULL DEFAULT true, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
       await sql`CREATE TABLE IF NOT EXISTS portfolio_settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
       await sql`CREATE TABLE IF NOT EXISTS portfolio_messages (id SERIAL PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL, subject TEXT NOT NULL DEFAULT '', message TEXT NOT NULL, received_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
+      await sql`CREATE TABLE IF NOT EXISTS portfolio_study_notes (id SERIAL PRIMARY KEY, title TEXT NOT NULL, slug TEXT NOT NULL UNIQUE, category TEXT NOT NULL, description TEXT NOT NULL, pdf_url TEXT NOT NULL, pages INTEGER NOT NULL DEFAULT 0, level TEXT NOT NULL DEFAULT 'All levels', accent TEXT NOT NULL DEFAULT '#c9ff36', instagram_url TEXT NOT NULL DEFAULT '', position INTEGER NOT NULL DEFAULT 0, published BOOLEAN NOT NULL DEFAULT true, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
+      const noteCount = await sql`SELECT COUNT(*)::int AS count FROM portfolio_study_notes`;
+      if (Number(noteCount[0].count) === 0)
+        for (const note of defaultStudyNotes)
+          await sql`INSERT INTO portfolio_study_notes (title,slug,category,description,pdf_url,pages,level,accent,instagram_url,position,published) VALUES (${note.title},${note.slug},${note.category},${note.description},${note.pdfUrl},${note.pages},${note.level},${note.accent},${note.instagramUrl},${note.position},${note.published})`;
       const count =
         await sql`SELECT COUNT(*)::int AS count FROM portfolio_projects`;
       if (Number(count[0].count) === 0)
@@ -349,5 +405,60 @@ export async function deleteMessage(id: number) {
   await ensureTables(sql);
   const rows =
     await sql`DELETE FROM portfolio_messages WHERE id=${id} RETURNING id`;
+  return rows.length > 0;
+}
+
+const mapStudyNote = (r: Record<string, unknown>): StudyNote => ({
+  id: Number(r.id),
+  title: String(r.title),
+  slug: String(r.slug),
+  category: String(r.category),
+  description: String(r.description),
+  pdfUrl: String(r.pdf_url),
+  pages: Number(r.pages),
+  level: String(r.level),
+  accent: String(r.accent),
+  instagramUrl: String(r.instagram_url ?? ""),
+  position: Number(r.position),
+  published: Boolean(r.published),
+  createdAt: new Date(String(r.created_at)).toISOString(),
+});
+
+export async function listStudyNotes(includeDrafts = false) {
+  try {
+    const sql = client();
+    if (!sql) return defaultStudyNotes;
+    await ensureTables(sql);
+    const rows = includeDrafts
+      ? await sql`SELECT * FROM portfolio_study_notes ORDER BY position,id`
+      : await sql`SELECT * FROM portfolio_study_notes WHERE published=true ORDER BY position,id`;
+    return rows.length ? rows.map(mapStudyNote) : defaultStudyNotes;
+  } catch (error) {
+    console.error("Study notes unavailable.", error);
+    return defaultStudyNotes;
+  }
+}
+
+export async function createStudyNote(note: StudyNoteInput) {
+  const sql = client();
+  if (!sql) throw new Error("Database is not configured.");
+  await ensureTables(sql);
+  const rows = await sql`INSERT INTO portfolio_study_notes (title,slug,category,description,pdf_url,pages,level,accent,instagram_url,position,published) VALUES (${note.title},${note.slug},${note.category},${note.description},${note.pdfUrl},${note.pages},${note.level},${note.accent},${note.instagramUrl},${note.position},${note.published}) RETURNING *`;
+  return mapStudyNote(rows[0]);
+}
+
+export async function updateStudyNote(id: number, note: StudyNoteInput) {
+  const sql = client();
+  if (!sql) throw new Error("Database is not configured.");
+  await ensureTables(sql);
+  const rows = await sql`UPDATE portfolio_study_notes SET title=${note.title},slug=${note.slug},category=${note.category},description=${note.description},pdf_url=${note.pdfUrl},pages=${note.pages},level=${note.level},accent=${note.accent},instagram_url=${note.instagramUrl},position=${note.position},published=${note.published},updated_at=now() WHERE id=${id} RETURNING *`;
+  return rows[0] ? mapStudyNote(rows[0]) : null;
+}
+
+export async function deleteStudyNote(id: number) {
+  const sql = client();
+  if (!sql) throw new Error("Database is not configured.");
+  await ensureTables(sql);
+  const rows = await sql`DELETE FROM portfolio_study_notes WHERE id=${id} RETURNING id`;
   return rows.length > 0;
 }

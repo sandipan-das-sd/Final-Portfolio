@@ -5,6 +5,7 @@ import {
   isPortfolioDbConfigured,
   listMessages,
   listProjects,
+  listStudyNotes,
 } from "@/lib/portfolio";
 export const metadata: Metadata = {
   title: "Portfolio Admin",
@@ -19,6 +20,7 @@ export default async function AdminPage() {
       initialProjects={await listProjects(true)}
       initialResume={await getResumeUrl()}
       initialMessages={await listMessages()}
+      initialNotes={await listStudyNotes(true)}
     />
   );
 }

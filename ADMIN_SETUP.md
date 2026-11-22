@@ -7,4 +7,4 @@ The portfolio works immediately with its built-in project list. To edit content 
 3. Add a Vercel Blob store and set `BLOB_READ_WRITE_TOKEN` to enable thumbnail and résumé uploads.
 4. Redeploy, then open `/admin`. The browser will request the admin username and password.
 
-The database tables and initial 16 projects are created automatically on first access. The dashboard supports creating, editing, publishing, ordering and deleting projects. Images can use a URL or be uploaded to Blob. Résumé replacement accepts PDF files up to 8 MB.
+The database tables, initial projects and starter study notes are created automatically on first access. The dashboard supports creating, editing, publishing, ordering and deleting projects and study-note PDFs. Images can use a URL or be uploaded to Blob. Résumé and study-note uploads accept PDF files up to 15 MB.
