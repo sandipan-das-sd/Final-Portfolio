@@ -18,6 +18,7 @@ export async function GET(request: Request, { params }: { params: Params }) {
   const headers = new Headers();
   headers.set("Content-Type", "application/pdf");
   headers.set("Content-Disposition", `inline; filename="${note.slug}.pdf"`);
+  headers.set("X-Robots-Tag", "noindex, nofollow");
   headers.set("Cache-Control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800");
   for (const name of ["content-length", "content-range", "accept-ranges", "etag", "last-modified"])
     if (upstream.headers.has(name)) headers.set(name, upstream.headers.get(name)!);
